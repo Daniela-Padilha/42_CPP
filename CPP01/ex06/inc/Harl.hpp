@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:10:14 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/14 21:10:32 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/14 23:03:44 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Harl
 	public:
 		Harl(void);
 		~Harl(void);
-		void complain(std::string level);
+		void filter(std::string level);
 
 	private:
 		void debug(void);
