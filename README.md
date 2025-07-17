@@ -31,8 +31,8 @@ This repository contains my solutions to the 42 C++ Piscine modules (00 to 09). 
 |-----------------------|--------------------------------------------------|
 | ex00                  | Operator overloading, fixed-point arithmetic     |
 | ex01                  | Copy constructor, assignment operator, comparison|
-| ex02                  |
-| ex03                  |
+| ex02                  | Roundf                                           |
+| ex03                  | Binary Space Partitioning                        |
 
 ---
 
