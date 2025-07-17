@@ -27,12 +27,11 @@ This repository contains my solutions to the 42 C++ Piscine modules (00 to 09). 
 ---
 
 ## 🧠 Module 02 — OOP and Ad-hoc Polymorphism
-| File                  | Concept                                          |
-|-----------------------|--------------------------------------------------|
-| ex00                  | Operator overloading, fixed-point arithmetic     |
-| ex01                  | Copy constructor, assignment operator, comparison|
-| ex02                  | Roundf                                           |
-| ex03                  | Binary Space Partitioning                        |
+| File                  | Concept                                             |
+|-----------------------|-----------------------------------------------------|
+| ex00                  | Orthodox Canonical Form, fixed-point arithmetic     |
+| ex01                  | Copy constructor, assignment operator               |
+| ex02                  | Roundf, operator overloading                        |
 
 ---
 
