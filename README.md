@@ -38,9 +38,9 @@ This repository contains my solutions to the 42 C++ Piscine modules (00 to 09). 
 ## 📦 Module 03 — Inheritance & Polymorphism
 | File                    | Concept                                       |
 |-------------------------|-----------------------------------------------|
-| ex00                    | Basic inheritance, method overloading         |
-| ex01                    | Derived classes and method specialization     |
-| ex02                    |
+| ex00                    | Orthodox Canonical Form                       |
+| ex01                    | Basic inheritance                             |
+| ex02                    | Derived classes and method specialization     |
 | ex03                    |
 
 ---
