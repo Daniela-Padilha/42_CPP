@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:02:53 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 20:54:46 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:19:36 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string				_name;
 		unsigned int			_hit;
 		unsigned int			_energy;

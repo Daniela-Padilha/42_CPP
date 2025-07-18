@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:09:52 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 21:02:57 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:35:00 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 ClapTrap::ClapTrap() : _hit(10), _energy(10), _attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 	this->_name = "Not set";
 }
 
 ClapTrap::ClapTrap(const std::string name) : _hit(10), _energy(10), _attack(0)
 {
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << "ClapTrap name constructor called" << std::endl;
 	this->_name = name;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -36,14 +36,14 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
 
 ClapTrap& ClapTrap::operator = (const ClapTrap& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
