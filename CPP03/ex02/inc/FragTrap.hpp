@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:42:43 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 21:50:00 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 22:56:44 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ class FragTrap : public ClapTrap {
 		FragTrap();
 		FragTrap(const std::string name);
 		~FragTrap();
+		FragTrap(const FragTrap& other);
+		FragTrap& operator = (const FragTrap& other);
+
 		void highFivesGuys();
 };
 

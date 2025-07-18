@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:38:29 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 21:31:04 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 23:39:35 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,25 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+{
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = other;
+}
+
+ScavTrap& ScavTrap::operator = (const ScavTrap& other)
+{
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hit = other._hit;
+		this->_energy = other._energy;
+		this->_attack = other._attack;
+	}
+	return (*this);
 }
 
 void ScavTrap::attack(const std::string& target)
