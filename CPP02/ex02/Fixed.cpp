@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 22:03:59 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 18:52:18 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 19:34:31 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ Fixed::Fixed(const float decimal)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
-	return ;
 }
 
 /*------------------------------Operators------------------------------------*/
