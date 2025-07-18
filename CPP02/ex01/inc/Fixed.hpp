@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:04:45 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/17 21:57:14 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:57:31 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <cmath>
 # include <iostream>
 
-class Fixed
-{
+class Fixed {
+
 private:
 	int	_nbr;
 	static const int _bits;
@@ -28,13 +28,13 @@ public:
 	Fixed(const int nbr);
 	Fixed(const float decimal);
 
-	Fixed&	operator=(const Fixed& newfixed);
+	Fixed&	operator = (const Fixed& newfixed);
 	float	toFloat() const;
 	int		toInt() const;
 	int 	getRawBits() const;
 	void	setRawBits(int const raw);
 };
 
-std::ostream& operator<<(std::ostream& output, const Fixed& fixednbr);
+std::ostream& operator << (std::ostream& output, const Fixed& fixednbr);
 
 #endif

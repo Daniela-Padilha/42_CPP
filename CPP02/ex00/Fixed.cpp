@@ -13,17 +13,13 @@
 #include "inc/Fixed.hpp"
 #include <iostream>
 
+/*------------------------------Constructors---------------------------------*/
+
 const int Fixed::_bits = 8;
 
 Fixed::Fixed() : _nbr(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-	return ;
 }
 
 Fixed::Fixed(const Fixed& newfixed)
@@ -32,13 +28,25 @@ Fixed::Fixed(const Fixed& newfixed)
 	*this = newfixed;
 }
 
-Fixed&	Fixed::operator=(const Fixed& newfixed)
+/*-------------------------------Destructors---------------------------------*/
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+	return ;
+}
+
+/*------------------------------Operators------------------------------------*/
+
+Fixed&	Fixed::operator = (const Fixed& newfixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &newfixed)
 		this->_nbr = newfixed.getRawBits();
 	return (*this);
 }
+
+/*-----------------------------Member Functions------------------------------*/
 
 int 	Fixed::getRawBits() const
 {
