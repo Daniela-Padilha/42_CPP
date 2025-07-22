@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:24:10 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/03 01:45:50 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/22 22:32:43                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ PhoneBook::PhoneBook()
 {
 	total = 0;
 	oldest = 0;
+}
+
+PhoneBook::~PhoneBook()
+{
+	return ;
 }
 
 void	PhoneBook::add_contact()

@@ -6,19 +6,19 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:34:48 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/03 15:25:11 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/22 22:20:43                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact()
+Contact::Contact()
 {
-
+	return ;
 }
-~Contact()
+Contact::~Contact()
 {
-
+	return ;
 }
 
 /*--------------------------------Get Methods-------------------------------*/
