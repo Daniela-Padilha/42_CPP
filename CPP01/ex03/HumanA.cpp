@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 00:05:39 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/14 17:16:04                                           */
+/*   Updated: 2025/07/23 18:58:58 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ HumanA::~HumanA(void)
 
 void	HumanA::attack(void)
 {
-	std::cout << this->_name;
+	std::cout << "\033[31;1m" << this->_name;
 	std::cout << " attacks with their ";
-	std::cout << this->_weapon.getType() << std::endl;
+	std::cout << this->_weapon.getType() << "\033[0m" << std::endl;
 }
