@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 17:19:33 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/13 20:18:45                                           */
+/*   Updated: 2025/07/23 18:54:20 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	arg_check(int ac, char **av)
 	
 	if (ac != 2)
 	{
-		std::cerr << "Wrong number of args" << std::endl;
+		std::cerr << "Please give the number of zombies you wish to create" << std::endl;
 		return (0);
 	}
 	while (av[1][i])
