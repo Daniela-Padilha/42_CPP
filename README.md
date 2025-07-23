@@ -1,6 +1,6 @@
 # 📘 42 C++ Modules Exercises
 
-This repository contains my solutions to the 42 C++ Piscine modules (00 to 09). Each file demonstrates a specific concept or set of concepts from modern C++ (C++98 to C++ canonical form), following the school's progression.
+This repository contains my solutions to the 42 C++ modules (00 to 09). Each file demonstrates a specific concept or set of concepts from modern C++ (C++98 to C++ canonical form), following the school's progression.
 
 ---
 
