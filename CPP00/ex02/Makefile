@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
+#    By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/03 01:50:51 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/07/03 01:51:52 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/07/23 15:35:05 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,22 +81,9 @@ fclean: clean
 re: fclean all
 	@echo $(BMAG)"✨Re-compile was" $(BGRN)"successfull✨"$(RES)
 
-#          ________________________________________________
-# ________|                                               |_______
-# \       |                  HELP RULES                   |      /
-#  \      |                                               |     /
-#  /      |_______________________________________________|     \ 
-# /__________)                                        (__________\ 
-
-#help
-help:
-	@echo "✳$(BMAG) make      $(BWHI)-> $(BMAG)compiles the lib"$(RES)
-	@echo "$(BWHI)✳$(BMAG) clean    $(BWHI) -> $(BMAG)removes all objects"$(RES)
-	@echo "$(BWHI)✳$(BMAG) fclean    $(BWHI)-> $(BMAG)removes all objects plus the program"$(RES)
-	@echo "$(BWHI)✳$(BMAG) re        $(BWHI)-> $(BMAG)removes all objects plus the program and recompiles"$(RES)
 
 #Phony targets to avoid clashes
-.PHONY: all clean fclean re help
+.PHONY: all clean fclean re
 
 #          ________________________________________________
 # ________|                                               |_______

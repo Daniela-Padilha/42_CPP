@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:36:09 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/03 15:24:54 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/23 15:42:20 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string>
 # include <iostream>
-# include <iomanip>
+# include <iomanip> //manipulators
 # include <cstdlib>
 
 class Contact {
