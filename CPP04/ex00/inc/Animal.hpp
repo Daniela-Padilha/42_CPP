@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:49:30 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/19 00:06:33 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/27 12:30:53 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class Animal {
 		std::string _type;
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(const Animal& other);
 		Animal& operator = (const Animal& other);
 
-		void makeSound() const;
+		virtual void makeSound() const;
 		std::string getType() const;
 };
 

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 23:50:35 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/27 12:44:33 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/07/27 12:38:14 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/07/27 16:26:31 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include <string>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal {
-	public:
-		Cat();
-		~Cat();
-		Cat(const Cat& other);
-		Cat& operator = (const Cat& other);
+class WrongCat : public WrongAnimal {
+public:
+	WrongCat();
+	~WrongCat();
+	WrongCat(const WrongCat& other);
+	WrongCat& operator = (const WrongCat& other);
 
-		void makeSound() const;
+	void makeSound() const;
 };
 
 #endif

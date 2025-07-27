@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/18 23:48:14 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/07/18 23:49:07 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/07/27 16:33:16 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,16 @@ INC_D = inc
 SRC = $(SRCS_D)/Animal.cpp \
 		$(SRCS_D)/Dog.cpp \
 		$(SRCS_D)/Cat.cpp \
+		$(SRCS_D)/WrongAnimal.cpp \
+		$(SRCS_D)/WrongCat.cpp \
 		$(SRCS_D)/main.cpp \
 
 #include files
 INC = $(INC_D)/Animal.hpp \
  		$(INC_D)/Dog.hpp \
 		$(INC_D)/Cat.hpp \
+		$(INC_D)/WrongAnimal.hpp \
+		$(INC_D)/WrongCat.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)

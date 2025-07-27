@@ -6,11 +6,13 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:59:21 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/19 00:10:31 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/27 16:11:33                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Cat.hpp"
+
+/*------------------------------Constructors---------------------------------*/
 
 Cat::Cat() : Animal()
 {
@@ -18,16 +20,20 @@ Cat::Cat() : Animal()
 	_type = "Cat";
 }
 
-Cat::~Cat()
-{
-	std::cout << "Cat ran away" << std::endl;
-}
-
 Cat::Cat(const Cat& other) : Animal()
 {
 	std::cout << "Cat copy constructor was called" << std::endl;
 	*this = other;
 }
+
+/*-------------------------------Destructors---------------------------------*/
+
+Cat::~Cat()
+{
+	std::cout << "Cat ran away" << std::endl;
+}
+
+/*------------------------------Operators------------------------------------*/
 
 Cat& Cat::operator = (const Cat& other)
 {
@@ -39,7 +45,9 @@ Cat& Cat::operator = (const Cat& other)
 	return (*this);
 }
 
+/*-----------------------------Member Functions------------------------------*/
+
 void Cat::makeSound() const
 {
-	std::cout << "Meowwww" << std::endl;
+	std::cout << "Cat: Meowwww" << std::endl;
 }

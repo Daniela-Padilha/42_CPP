@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 23:59:24 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/27 16:11:28                                             */
+/*   Created: 2025/07/27 12:38:01 by ddo-carm          #+#    #+#             */
+/*  Updated:    2025/07/27 16:23:23                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/Dog.hpp"
+#include "inc/WrongAnimal.hpp"
 
 /*------------------------------Constructors---------------------------------*/
 
-Dog::Dog() : Animal()
+WrongAnimal::WrongAnimal() : _type("Not set")
 {
-	std::cout << "Dog was created" << std::endl;
-	_type = "Dog";
+	std::cout << "Wrong Animal was created" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal()
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
-	std::cout << "Dog copy constructor was called" << std::endl;
+	std::cout << "Wrong Animal copy constructor was called" << std::endl;
 	*this = other;
 }
 
 /*-------------------------------Destructors---------------------------------*/
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Dog ran away" << std::endl;
+	std::cout << "Wrong Animal ran away" << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
 
-Dog& Dog::operator = (const Dog& other)
+WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other)
 {
-	std::cout << "Dog copy assignment operator was called" << std::endl;
+	std::cout << "Wrong Animal copy assignment operator was called" << std::endl;
 	if (this != &other)
 	{
 		this->_type = other._type;
@@ -47,7 +46,12 @@ Dog& Dog::operator = (const Dog& other)
 
 /*-----------------------------Member Functions------------------------------*/
 
-void Dog::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	std::cout << "Dog: Woof woof" << std::endl;
+	std::cout << "Silence" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (this->_type);
 }

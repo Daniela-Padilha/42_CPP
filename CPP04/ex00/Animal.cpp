@@ -6,20 +6,17 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:54:04 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/19 00:08:25 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/27 16:09:11                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Animal.hpp"
 
+/*------------------------------Constructors---------------------------------*/
+
 Animal::Animal() : _type("Not set")
 {
 	std::cout << "Animal was created" << std::endl;
-}
-
-Animal::~Animal()
-{
-	std::cout << "Animal ran away" << std::endl;
 }
 
 Animal::Animal(const Animal& other)
@@ -27,6 +24,15 @@ Animal::Animal(const Animal& other)
 	std::cout << "Animal copy constructor was called" << std::endl;
 	*this = other;
 }
+
+/*-------------------------------Destructors---------------------------------*/
+
+Animal::~Animal()
+{
+	std::cout << "Animal ran away" << std::endl;
+}
+
+/*------------------------------Operators------------------------------------*/
 
 Animal& Animal::operator = (const Animal& other)
 {
@@ -38,9 +44,11 @@ Animal& Animal::operator = (const Animal& other)
 	return (*this);
 }
 
+/*-----------------------------Member Functions------------------------------*/
+
 void Animal::makeSound() const
 {
-	std::cout << "Something rustles in the leaves" << std::endl;
+	std::cout << "Silence" << std::endl;
 }
 
 std::string Animal::getType() const
