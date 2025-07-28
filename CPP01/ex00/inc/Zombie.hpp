@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 13:19:36 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/13 17:10:49 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:50:00 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include <string>
 # include <iostream>
+
+# define BRED 	"\033[31;1m"
+# define BGRN	"\033[32;1m"
+# define BCYA	"\033[36;1m"
+# define RES	"\033[0m"
 
 class Zombie 
 {
@@ -28,5 +33,6 @@ class Zombie
 	private:
 		std::string _name;
 };
+
 
 #endif

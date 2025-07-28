@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:51:42 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/14 21:06:18                                           */
+/*   Updated: 2025/07/28 19:03:59 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cout << "Wrong arg number" << std::endl;
+		std::cout << "Try one of the following: ";
+		std::cout << "DEBUG, INFO, WARNING, ERROR" << std::endl;
 		return (1);
 	}
 	harl.complain(av[1]);

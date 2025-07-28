@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 00:05:39 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/23 18:58:58 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:55:11 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ HumanA::~HumanA(void)
 
 void	HumanA::attack(void)
 {
-	std::cout << "\033[31;1m" << this->_name;
+	std::cout << BRED << this->_name;
 	std::cout << " attacks with their ";
-	std::cout << this->_weapon.getType() << "\033[0m" << std::endl;
+	std::cout << this->_weapon.getType() << RES << std::endl;
 }

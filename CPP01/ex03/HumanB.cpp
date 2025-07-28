@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 00:05:31 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/23 19:00:29 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:55:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	HumanB::attack(void)
 {
 	if (_weapon)
 	{
-		std::cout << "\033[31;1m" << this->_name;
+		std::cout << BRED << this->_name;
 		std::cout << " attacks with their ";
-		std::cout << this->_weapon->getType() << "\033[0m" << std::endl;
+		std::cout << this->_weapon->getType() << RES << std::endl;
 	}
 	else
 	{
-		std::cout << "\033[32;1m" << this->_name;
-		std::cout << " is not armed" << "\033[0m" << std::endl;
+		std::cout << BGRN << this->_name;
+		std::cout << " is not armed" << RES << std::endl;
 	}
 }
 

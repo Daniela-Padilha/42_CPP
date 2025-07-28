@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:10:18 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/14 23:05:02                                           */
+/*   Updated: 2025/07/28 19:04:47 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cout << "Wrong arg number" << std::endl;
+		std::cout << "Try one of the following: ";
+		std::cout << "DEBUG, INFO, WARNING, ERROR" << std::endl;
 		return (1);
 	}
 	harl.filter(av[1]);

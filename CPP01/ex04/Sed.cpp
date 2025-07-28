@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:36:25 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/14 19:48:05                                           */
+/*   Updated: 2025/07/28 18:58:20 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Sed.hpp"
 
-std::string	replaceAll(const std::string& line, const std::string& s1, const std::string& s2);
+std::string	replaceAll(const std::string& line, const std::string& s1,
+		const std::string& s2);
 
 //opens file, reads, creates new file and writes into it replacing strings
 
@@ -45,7 +46,8 @@ void sed(std::string filename, std::string s1, std::string s2)
 
 //ref does not copy neither modify, and can't be null
 
-std::string	replaceAll(const std::string& line, const std::string& s1, const std::string& s2)
+std::string	replaceAll(const std::string& line, const std::string& s1,
+		const std::string& s2)
 {
 	std::string res;
 	size_t		i = 0;

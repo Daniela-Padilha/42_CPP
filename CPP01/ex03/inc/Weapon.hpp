@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 22:37:09 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/14 17:06:41 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:54:45 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define WEAPON_HPP
 
 # include <string>
+
+# define BRED 	"\033[31;1m"
+# define BGRN	"\033[32;1m"
+# define RES	"\033[0m"
 
 class Weapon
 {
