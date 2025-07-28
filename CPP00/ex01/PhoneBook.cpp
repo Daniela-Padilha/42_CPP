@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:45:20 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/23 18:43:27 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:26:39 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,66 +34,95 @@ std::string	truncate(std::string str)
 	return (str);
 }
 
-/*--------------------------------Set Methods-------------------------------*/
+int myIsSpace(std::string str)
+{
+	if (str.empty())
+		return (0);
+	for (int i = 0; i <= (int)str.length(); i++)
+	{
+		if (std::isspace(str[i]))
+			return (1);
+	}
+	return (0);
+}
+
+/*--------------------------------Methods-------------------------------*/
+
+std::string getInput(std::string field)
+{
+	std::string input;
+	
+	if (field != "Phone Number")
+	{
+		std::cout << field << ": ";
+		std::getline(std::cin, input);
+		if (input.empty() || myIsSpace(input))
+		{
+			std::cout << BRED "\nSpaces are not allowed! Try again! \n" RES << std::endl;
+			return ("");
+		}
+		return (input);
+	}
+	else
+	{
+		std::cout << field << ": ";
+		std::getline(std::cin, input);
+		if (input.empty() || myIsSpace(input))
+		{
+			std::cout << BRED "\nSpaces are not allowed! Try again! \n" RES << std::endl;
+			return ("");
+		}
+		for (int i = 0; i <= (int)input.length(); i++)
+		{
+			if (std::isalpha(input[i]))
+			{
+				std::cout << BRED "\nThis field only accepts numbers \n" RES << std::endl;
+				return ("");
+			}
+			else
+				continue ;
+		}
+		return (input);
+	}
+}
 
 void	PhoneBook::add_contact()
 {
 	Contact		new_contact;
 	std::string input;
 
-	std::cout << "First Name: ";
-	std::getline(std::cin, input);
+	input = getInput("First Name");
 	if (input.empty())
-	{
-		std::cout << "\n\033[31;1mFields cannot be empty! Try again! \033[0m\n" << std::endl;
 		return ;
-	}
 	new_contact.set_first_name(input);
-
-	std::cout << "Last Name: ";
-	std::getline(std::cin, input);
+	
+	input = getInput("Last Name");
 	if (input.empty())
-	{
-		std::cout << "\n\033[31;1mFields cannot be empty! Try again! \033[0m\n" << std::endl;
 		return ;
-	}
 	new_contact.set_last_name(input);
 
-	std::cout << "Nickname: ";
-	std::getline(std::cin, input);
+	input = getInput("Nickname");
 	if (input.empty())
-	{
-		std::cout << "\n\033[31;1mFields cannot be empty! Try again! \033[0m\n" << std::endl;
 		return ;
-	}
 	new_contact.set_nickname(input);
 
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, input);
+	input = getInput("Phone Number");
 	if (input.empty())
-	{
-		std::cout << "\n\033[31;1mFields cannot be empty! Try again! \033[0m\n" << std::endl;
 		return ;
-	}
 	new_contact.set_phone_number(input);
-
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, input);
+	
+	input = getInput("Darkest Secret");
 	if (input.empty())
-	{
-		std::cout << "\n\033[31;1mFields cannot be empty! Try again! \033[0m\n" << std::endl;
 		return ;
-	}
 	new_contact.set_darkest_secret(input);
 	
 	contacts[oldest] = new_contact;
 	oldest = (oldest + 1) % 8;
 	if (total < 8)
 		total++;
-	std::cout << "\033[32;1m--New contact added sucessfully-- \033[0m \n" << std::endl;
+	std::cout << BGRN "--New contact added sucessfully-- \n" RES << std::endl;
 }
 
-/*--------------------------------Get Methods-------------------------------*/
 
 void	PhoneBook::get_contact() const
 {
@@ -104,7 +133,7 @@ void	PhoneBook::get_contact() const
 	i = 0;
 	if (total == 0)
 	{
-		std::cout << "\033[31;1mPhoneBook is empty. Please add a contact! \033[0m \n" << std::endl;
+		std::cout << "\033[31;1mPhoneBook is empty. Please add a contact! \n" RES << std::endl;
 		return ;
 	}
 	std::cout << "\n|     Index|First Name| Last Name|  Nickname|" << std::endl;
@@ -117,11 +146,11 @@ void	PhoneBook::get_contact() const
 		std::cout << "|" << std::endl;
 		i++;
 	}
-	std::cout << "\n\033[0;36mEnter contact index for more details: \033[0m";
+	std::cout << "\n\033[0;36mEnter contact index for more details: " RES;
 	std::getline(std::cin, index_s);
 	index = atoi(index_s.c_str());
 	if (index < 1 || index > total || std::isalpha(index))
-		std::cout << "\033[31;1mIndex is invalid \033[0m \n" << std::endl;
+		std::cout << "\033[31;1mIndex is invalid \n" RES << std::endl;
 	else
 		display_contact(index - 1);
 }

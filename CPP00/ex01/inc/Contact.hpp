@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:36:09 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/23 15:42:20 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 16:50:25 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,23 @@
 # include <iostream>
 # include <iomanip> //manipulators
 # include <cstdlib>
+
+# define RED	"\033[0;31m"
+# define GRN	"\033[0;32m"
+# define YEL	"\033[0;33m"
+# define BLU	"\033[0;34m"
+# define BLA	"\033[0;30m"
+# define CYA	"\033[0;36m"
+# define GREY	"\033[0;90m"
+# define BBLA	"\033[30;1m"
+# define BRED 	"\033[31;1m"
+# define BGRN	"\033[32;1m"
+# define BYEL	"\033[33;1m"
+# define BBLU	"\033[34;1m"
+# define BMAG	"\033[35;1m"
+# define BCYA	"\033[36;1m"
+# define BWHI	"\033[37;1m"
+# define RES	"\033[0m"
 
 class Contact {
 	public:

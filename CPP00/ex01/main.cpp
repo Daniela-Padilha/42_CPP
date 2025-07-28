@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 13:19:58 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/23 18:43:48 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/28 16:50:36 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int main(void)
 	while (1)
 	{
 		std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
-		std::cout << "\033[0;36mEnter command: \033[0m";
+		std::cout << CYA "Enter command: " RES;
 		std::getline(std::cin, cmd);
 		if (cmd == "EXIT" || std::cin.eof())
 		{
-			std::cout << "\033[31;1mExiting PhoneBook \033[0m" << std::endl;
+			std::cout << BRED "Exiting PhoneBook" RES << std::endl;
 			break ;
 		}
 		else if (cmd == "ADD")
@@ -38,7 +38,7 @@ int main(void)
 			book.get_contact();
 		}
 		else
-			std::cout << "\033[31;1mUnknown command \033[0m \n" << std::endl;
+			std::cout << BRED "Unknown command \n" RES << std::endl;
 	}
 	return (0);
 }
