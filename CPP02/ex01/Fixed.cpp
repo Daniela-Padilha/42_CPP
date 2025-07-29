@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:04:43 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 17:28:01 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/29 22:11:26                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@ const int Fixed::_bits = 8;
 
 Fixed::Fixed() : _nbr(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << BGRN "Default constructor called" RES << std::endl;
 }
 
 Fixed::Fixed(const Fixed& newfixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << BYEL "Copy constructor called" RES << std::endl;
 	*this = newfixed;
 }
 
 Fixed::Fixed(const int nbr)
 {
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << BGRN "Int constructor called" RES << std::endl;
 	this->_nbr = nbr << this->_bits;
 }
 
 Fixed::Fixed(const float decimal)
 {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << BGRN "Float constructor called" RES << std::endl;
 	this->_nbr = roundf(decimal * (1 << this->_bits));
 }
 
@@ -43,7 +43,7 @@ Fixed::Fixed(const float decimal)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << BRED "Destructor called" RES << std::endl;
 	return ;
 }
 

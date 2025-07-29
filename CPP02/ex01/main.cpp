@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:04:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/17 22:01:24 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/07/29 22:14:52                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int main( void )
 	
 	std::cout << CYA "	OBJECT: d" RES << std::endl;
 	Fixed const d( b );
-
 	std::cout << std::endl;
+
+	std::cout << CYA "	TEMP" RES << std::endl;
 	a = Fixed( 1234.4321f );
 	std::cout << std::endl;
 
