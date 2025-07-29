@@ -15,14 +15,24 @@
 
 int main() 
 {
+	std::cout << CYA "	OBJECT: a" RES << std::endl;
 	Fixed a;
+	std::cout << std::endl;
+	
+	std::cout << CYA "	OBJECT: b" RES << std::endl;
 	Fixed b( a );
+	std::cout << std::endl;
+	
+	std::cout << CYA "	OBJECT: c" RES << std::endl;
 	Fixed c;
-
 	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << CYA "	Get functions" RES << std::endl;
+	std::cout << CYA "Object a: " RES << a.getRawBits() << std::endl;
+	std::cout << CYA "Object b: " RES << b.getRawBits() << std::endl;
+	std::cout << CYA "Object c: " RES << c.getRawBits() << std::endl;
+	std::cout << std::endl;
 	
 	return 0;
 }
