@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:36:25 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/28 18:58:20 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/29 14:32:34 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ std::string	replaceAll(const std::string& line, const std::string& s1,
 
 void sed(std::string filename, std::string s1, std::string s2)
 {
-	(void)s1;
-	(void)s2;
 	std::string   newfilename = filename + ".replace";
-	std::ifstream file(filename.c_str());
+	std::ifstream file;
+	
+	file.open(filename.c_str());
 	if (!file.is_open())
 	{
 		std::cerr << "Error: Could not open file " << filename << std::endl;
 		return ;
 	}
+	
 	std::ofstream newfile(newfilename.c_str());
 	if (!newfile.is_open())
 	{
@@ -35,16 +36,16 @@ void sed(std::string filename, std::string s1, std::string s2)
 		file.close();
 		return ;
 	}
+	
 	std::string line;
 	while (std::getline(file, line))
 	{
 		newfile << replaceAll(line, s1, s2) << std::endl;
 	}
+	
 	file.close();
 	newfile.close();
 }
-
-//ref does not copy neither modify, and can't be null
 
 std::string	replaceAll(const std::string& line, const std::string& s1,
 		const std::string& s2)
