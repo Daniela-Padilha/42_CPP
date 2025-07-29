@@ -13,6 +13,12 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
+# define RES "\033[0m"
+# define BRED "\033[31;1m"
+# define BGRN "\033[32;1m"
+# define BYEL "\033[33;1m"
+# define CYA "\033[0;36m"
+
 class Fixed {
 
 private:
