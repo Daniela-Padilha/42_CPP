@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:45:20 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/28 18:26:39 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:48:47 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ void	PhoneBook::get_contact() const
 	i = 0;
 	if (total == 0)
 	{
-		std::cout << "\033[31;1mPhoneBook is empty. Please add a contact! \n" RES << std::endl;
+		std::cout << BRED "PhoneBook is empty. Please add a contact! \n" RES << std::endl;
 		return ;
 	}
 	std::cout << "\n|     Index|First Name| Last Name|  Nickname|" << std::endl;
@@ -146,11 +146,11 @@ void	PhoneBook::get_contact() const
 		std::cout << "|" << std::endl;
 		i++;
 	}
-	std::cout << "\n\033[0;36mEnter contact index for more details: " RES;
+	std::cout << CYA "\nEnter contact index for more details: " RES;
 	std::getline(std::cin, index_s);
 	index = atoi(index_s.c_str());
 	if (index < 1 || index > total || std::isalpha(index))
-		std::cout << "\033[31;1mIndex is invalid \n" RES << std::endl;
+		std::cout << BRED "Index is invalid \n" RES << std::endl;
 	else
 		display_contact(index - 1);
 }

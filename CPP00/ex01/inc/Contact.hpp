@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 12:36:09 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/28 16:50:25 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:48:36 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define BCYA	"\033[36;1m"
 # define BWHI	"\033[37;1m"
 # define RES	"\033[0m"
+
 
 class Contact {
 	public:
