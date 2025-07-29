@@ -8,8 +8,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 | File              | Concept                                                                         |
 |-------------------|---------------------------------------------------------------------------------|
 | ex00              | Command-line arguments, basic output                                            |
-| ex01              | Classes, private attributes, basic I/O                                          |
-| ex02              | Formatted output with std::setw, string truncation, and user-friendly CLI.      |
+| ex01              | Classes, private attributes, basic I/O, std::setw, string truncation            |
 
 ---
 
@@ -109,4 +108,9 @@ Where applicable, I’ve included test files or sample usage to demonstrate and 
 
 All files can be compiled with a simple `Makefile` or using:
 ```bash
-g++ -Wall -Wextra -Werror -std=c++98 file.cpp -o output
+make
+```
+Or to include memory leak verification use (only in exercises where applicable):
+```bash
+make val
+```
