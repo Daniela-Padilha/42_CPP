@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
+#    By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/17 22:03:27 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/07/18 19:01:53 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/07/29 15:53:26 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(NAME): $(OBJ) $(INC)
 	@$(COMP) $(CPPFLAGS) -I $(INC_D) -c $< -o $@
 	@echo $(BMAG)"Compiling..."$(RES)
 
-valgrind: all
+val: all
 	@$(VAL) ./$(NAME)
 
 #          ________________________________________________
