@@ -19,12 +19,12 @@ const int Fixed::_bits = 8;
 
 Fixed::Fixed() : _nbr(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << BGRN "Default constructor called" RES << std::endl;
 }
 
 Fixed::Fixed(const Fixed& newfixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << BYEL "Copy constructor called" RES << std::endl;
 	*this = newfixed;
 }
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const Fixed& newfixed)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << BRED "Destructor called" RES << std::endl;
 	return ;
 }
 
