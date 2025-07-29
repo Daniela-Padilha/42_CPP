@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:04:43 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/29 22:11:26                                             */
+/*  Updated:    2025/07/29 23:05:55                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ Fixed& Fixed::operator = (const Fixed& newfixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &newfixed)
-		this->_nbr = newfixed.getRawBits();
+		this->_nbr = newfixed._nbr;
 	return (*this);
 }
 
 std::ostream& operator << (std::ostream& output, const Fixed& fixednbr)
-{
+{ 
 	output << fixednbr.toFloat();
 	return (output);
 }

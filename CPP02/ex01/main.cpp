@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:04:41 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/29 22:14:52                                             */
+/*  Updated:    2025/07/29 23:10:09                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main( void )
 	a = Fixed( 1234.4321f );
 	std::cout << std::endl;
 
-	std::cout << CYA "	VALUES" RES << std::endl;
+	std::cout << CYA "	Operator <<" RES << std::endl;
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
