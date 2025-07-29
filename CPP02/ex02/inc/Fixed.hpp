@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 22:03:34 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 17:58:00 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/29 23:33:08 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <cmath>
 # include <iostream>
+
+# define RES "\033[0m"
+# define BRED "\033[31;1m"
+# define BGRN "\033[32;1m"
+# define BYEL "\033[33;1m"
+# define CYA "\033[0;36m"
 
 class Fixed {
 
