@@ -31,8 +31,8 @@ Cat::Cat(const Cat& other) : Animal()
 
 Cat::~Cat()
 {
-	std::cout << BRED "Cat ran away" RES << std::endl;
 	delete(_brain);
+	std::cout << BRED "Cat ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/

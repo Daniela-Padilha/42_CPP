@@ -31,8 +31,8 @@ Dog::Dog(const Dog& other) : Animal()
 
 Dog::~Dog()
 {
-	std::cout << BRED "Dog ran away" RES << std::endl;
 	delete(_brain);
+	std::cout << BRED "Dog ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
