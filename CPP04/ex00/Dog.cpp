@@ -16,13 +16,13 @@
 
 Dog::Dog() : Animal()
 {
-	std::cout << "Dog was created" << std::endl;
+	std::cout << BGRN "Dog was created" RES << std::endl;
 	_type = "Dog";
 }
 
 Dog::Dog(const Dog& other) : Animal()
 {
-	std::cout << "Dog copy constructor was called" << std::endl;
+	std::cout << BYEL"Dog copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -30,7 +30,7 @@ Dog::Dog(const Dog& other) : Animal()
 
 Dog::~Dog()
 {
-	std::cout << "Dog ran away" << std::endl;
+	std::cout << BRED "Dog ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
@@ -49,5 +49,5 @@ Dog& Dog::operator = (const Dog& other)
 
 void Dog::makeSound() const
 {
-	std::cout << "Dog: Woof woof" << std::endl;
+	std::cout << BMAG "Dog: Woof woof" RES << std::endl;
 }

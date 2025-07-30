@@ -16,27 +16,34 @@
 
 int main()
 {
-	const Animal* pets[10];
+	std::cout << CYA "	----Animal----" RES << std::endl;
+	std::cout << CYA "	Object: j" RES << std::endl;
 	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
 	std::cout << std::endl;
-	for (int i = 0; i < 10; i++)
+
+	std::cout << CYA "	Object: i" RES << std::endl;
+	const Animal* i = new Cat();
+	std::cout << std::endl;
+	
+	delete j;
+	std::cout << std::endl;
+	delete i;
+	std::cout << std::endl;
+
+	std::cout << CYA "	----Pets----" RES << std::endl;
+	const Animal* pets[3];
+
+	for (int i = 0; i < 3; i++)
 	{
-		if (i < 5)
+		if (i % 2 == 0)
 			pets[i] = new Cat();
 		else
 			pets[i] = new Dog();
 	}
 
 	std::cout << std::endl;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 3; i++)
 		delete (pets[i]);
-
-	std::cout << std::endl;
-	delete j;//should not create a leak
-	std::cout << std::endl;
-	delete i;
 
 	return 0;
 }

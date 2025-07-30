@@ -16,12 +16,12 @@
 
 WrongAnimal::WrongAnimal() : _type("Not set")
 {
-	std::cout << "Wrong Animal was created" << std::endl;
+	std::cout << BGRN "Wrong Animal was created" RES << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
-	std::cout << "Wrong Animal copy constructor was called" << std::endl;
+	std::cout << BYEL "Wrong Animal copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -29,7 +29,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Wrong Animal ran away" << std::endl;
+	std::cout << BRED "Wrong Animal ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
@@ -48,7 +48,7 @@ WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other)
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "Silence" << std::endl;
+	std::cout << BMAG "Silence" RES << std::endl;
 }
 
 std::string WrongAnimal::getType() const

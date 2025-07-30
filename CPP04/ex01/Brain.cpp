@@ -16,12 +16,12 @@
 
 Brain::Brain()
 {
-	std::cout << "A Brain was created!" << std::endl;
+	std::cout << BMAG "A Brain was created!" RES << std::endl;
 }
 
 Brain::Brain(const Brain& other)
 {
-	std::cout << "Brain copy constructor was called" << std::endl;
+	std::cout << BYEL "Brain copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -29,7 +29,7 @@ Brain::Brain(const Brain& other)
 
 Brain::~Brain()
 {
-	std::cout << "You no longer have a Brain" << std::endl;
+	std::cout << BRED "You no longer have a Brain" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/

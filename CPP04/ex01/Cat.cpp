@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:59:21 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/27 17:10:36                                             */
+/*  Updated:    2025/07/27 16:11:33                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 Cat::Cat() : Animal()
 {
-	std::cout << "Cat was created" << std::endl;
+	std::cout << BGRN "Cat was created" RES << std::endl;
 	_type = "Cat";
-	_brain = new Brain();
+	_brain = new Brain;
 }
 
 Cat::Cat(const Cat& other) : Animal()
 {
-	std::cout << "Cat copy constructor was called" << std::endl;
+	std::cout << BYEL "Cat copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -31,8 +31,8 @@ Cat::Cat(const Cat& other) : Animal()
 
 Cat::~Cat()
 {
-	std::cout << "Cat ran away" << std::endl;
-	delete (_brain);
+	std::cout << BRED "Cat ran away" RES << std::endl;
+	delete(_brain);
 }
 
 /*------------------------------Operators------------------------------------*/
@@ -51,5 +51,5 @@ Cat& Cat::operator = (const Cat& other)
 
 void Cat::makeSound() const
 {
-	std::cout << "Cat: Meowwww" << std::endl;
+	std::cout << BMAG "Cat: Meowwww" RES << std::endl;
 }

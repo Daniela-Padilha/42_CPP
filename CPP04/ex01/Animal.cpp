@@ -16,12 +16,12 @@
 
 Animal::Animal() : _type("Not set")
 {
-	std::cout << "Animal was created" << std::endl;
+	std::cout << BGRN "Animal was created" RES << std::endl;
 }
 
 Animal::Animal(const Animal& other)
 {
-	std::cout << "Animal copy constructor was called" << std::endl;
+	std::cout << BYEL "Animal copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -29,7 +29,7 @@ Animal::Animal(const Animal& other)
 
 Animal::~Animal()
 {
-	std::cout << "Animal ran away" << std::endl;
+	std::cout << BRED "Animal ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
@@ -48,7 +48,7 @@ Animal& Animal::operator = (const Animal& other)
 
 void Animal::makeSound() const
 {
-	std::cout << "Silence" << std::endl;
+	std::cout << BMAG "Silence" RES << std::endl;
 }
 
 std::string Animal::getType() const

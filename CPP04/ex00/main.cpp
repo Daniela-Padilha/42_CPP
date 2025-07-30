@@ -16,15 +16,26 @@
 
 int main()
 {
+	std::cout << CYA "	----Animal----" RES << std::endl;
+	std::cout << CYA "	Object: meta" RES << std::endl;
 	const Animal* meta = new Animal();
+	std::cout << std::endl;
+
+	std::cout << CYA "	Object: j" RES << std::endl;
 	const Animal* j = new Dog();
+	std::cout << std::endl;
+
+	std::cout << CYA "	Object: i" RES << std::endl;
 	const Animal* i = new Cat();
 	std::cout << std::endl;
+
+	std::cout << CYA "	Get type" RES << std::endl;
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << std::endl;
 
+	std::cout << CYA "	Sounds" RES << std::endl;
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
@@ -35,13 +46,16 @@ int main()
 	delete (i);
 
 	std::cout << std::endl;
+	std::cout << CYA "	----Wrong Animal----" RES << std::endl;
 	const WrongAnimal* wrong = new WrongAnimal();
 	const WrongAnimal* c = new WrongCat();
 	std::cout << std::endl;
 
+	std::cout << CYA "	Get type" RES << std::endl;
 	std::cout << c->getType() << " " << std::endl;
 	std::cout << std::endl;
 
+	std::cout << CYA "	Sounds" RES << std::endl;
 	c->makeSound();
 	wrong->makeSound();
 

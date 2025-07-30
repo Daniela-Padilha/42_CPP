@@ -16,13 +16,13 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << "Wrong  Cat was created" << std::endl;
+	std::cout << BGRN "Wrong  Cat was created" RES << std::endl;
 	_type = "Wrong Cat";
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal()
 {
-	std::cout << "Wrong Cat copy constructor was called" << std::endl;
+	std::cout << BYEL "Wrong Cat copy constructor was called" RES << std::endl;
 	*this = other;
 }
 
@@ -30,7 +30,7 @@ WrongCat::WrongCat(const WrongCat& other) : WrongAnimal()
 
 WrongCat::~WrongCat()
 {
-	std::cout << "Wrong Cat ran away" << std::endl;
+	std::cout << BRED "Wrong Cat ran away" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/
@@ -49,5 +49,5 @@ WrongCat& WrongCat::operator = (const WrongCat& other)
 
 void WrongCat::makeSound() const
 {
-	std::cout << "Wrong Cat: Meowwww" << std::endl;
+	std::cout << BMAG "Wrong Cat: Meowwww" RES << std::endl;
 }
