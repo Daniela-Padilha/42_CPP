@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 22:03:59 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/29 23:34:56                                             */
+/*  Updated:    2025/07/30 00:41:25                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,12 +145,14 @@ bool	Fixed::operator != (const Fixed& other) const
 		return (false);
 }
 
+//pre
 Fixed&	Fixed::operator ++ ()
 {
 	this->_nbr++;
 	return (*this);
 }
 
+//post
 Fixed	Fixed::operator ++ (int)
 {
 	Fixed newfixed;
@@ -160,12 +162,14 @@ Fixed	Fixed::operator ++ (int)
 	return (newfixed);
 }
 
+//pre
 Fixed&	Fixed::operator -- ()
 {
 	this->_nbr--;
 	return (*this);
 }
 
+//post
 Fixed	Fixed::operator -- (int)
 {
 	Fixed newfixed;

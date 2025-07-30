@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 22:04:04 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/30 00:02:20                                             */
+/*  Updated:    2025/07/30 00:53:48                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,22 @@ int main( void )
 	std::cout << CYA "Value after a++" RES << std::endl;
 	std::cout << a << std::endl << std::endl;
 
+	std::cout << CYA "Operator --a" RES << std::endl;
+	std::cout << --a << std::endl << std::endl;
+
+	std::cout << CYA "Value after --a" RES << std::endl;
+	std::cout << a << std::endl << std::endl;
+
+	std::cout << CYA "Operator a--" RES << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << std::endl;
+	
+	std::cout << CYA "Value after a--" RES << std::endl;
+	std::cout << a << std::endl << std::endl;
+
 	//Arithmetic
 	std::cout << CYA "	Objects for arithmetic tests\n" RES << std::endl;
+	std::cout << "a is now: " << ++a << std::endl;
 	Fixed c = a + b;
     Fixed d = b - a;
     Fixed e = a * b;
