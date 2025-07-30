@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 22:45:25 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 23:41:22 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/30 15:57:42 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
 {
-	std::cout << "DiamondTrap default constructor called" << std::endl;
+	std::cout << BGRN "DiamondTrap default constructor called" RES << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name)
 	: ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap()
 {
-	std::cout << "DiamondTrap name constructor called" << std::endl;
+	std::cout << BGRN "DiamondTrap name constructor called" RES << std::endl;
 	_name = name;
 	_hit = FragTrap::_hit;
 	_energy = ScavTrap::_energy;
@@ -29,12 +29,12 @@ DiamondTrap::DiamondTrap(const std::string& name)
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap destructor called" << std::endl;
+	std::cout << BRED "DiamondTrap destructor called" RES << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap& other) : ClapTrap(other), FragTrap(), ScavTrap()
 {
-	std::cout << "DiamondTrap copy constructor called" << std::endl;
+	std::cout << BYEL "DiamondTrap copy constructor called" RES << std::endl;
 	*this = other;
 }
 
@@ -53,8 +53,8 @@ DiamondTrap& DiamondTrap::operator = (DiamondTrap& other)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "I am " << this->_name;
-	std::cout << " and my grandma is " << ClapTrap::_name << "!\n" << std::endl;
+	std::cout << BMAG "\nI am " << this->_name;
+	std::cout << " and my grandma is " << ClapTrap::_name << "!\n" RES << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target)

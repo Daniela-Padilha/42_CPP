@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:38:29 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 23:39:25 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/30 15:49:08 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << BGRN "ScavTrap default constructor called" RES << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap name constructor called" << std::endl;
+	std::cout << BGRN "ScavTrap name constructor called" RES << std::endl;
 	_hit = 100;
 	_energy = 50;
 	_attack = 20;
@@ -27,12 +27,12 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << BRED "ScavTrap destructor called" RES << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << BYEL "ScavTrap copy constructor called" RES << std::endl;
 	*this = other;
 }
 
@@ -54,10 +54,10 @@ void ScavTrap::attack(const std::string& target)
 	if (this->_energy != 0 && this->_hit != 0)
 	{
 		this->_energy--;
-		std::cout << "ScavTrap " << this->_name;
+		std::cout << BRED "ScavTrap " << this->_name;
 		std::cout << " attacks " << target;
 		std::cout << " causing " << this->_attack;
-		std::cout << " points of damage!" << std::endl;
+		std::cout << " points of damage!" RES << std::endl;
 		return ;
 	}
 	else if (this->_energy == 0)
@@ -74,5 +74,5 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate keeper mode " << std::endl;
+	std::cout << BYEL "ScavTrap is now in Gate keeper mode " RES << std::endl;
 }

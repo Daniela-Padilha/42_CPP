@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:38:31 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/18 22:53:11 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/07/30 15:33:17 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-	private:
-
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);
