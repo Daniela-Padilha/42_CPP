@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:09:52 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/08/01 15:26:25                                             */
+/*  Updated:    2025/08/01 16:08:55                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,18 @@ void ClapTrap::attack(const std::string& target)
 	if (this->_energy != 0 && this->_hit != 0)
 	{
 		this->_energy--;
-		std::cout << BRED "ClapTrap " << this->_name;
+		std::cout << RED "ClapTrap " << this->_name;
 		std::cout << " attacks " << target;
 		std::cout << " causing " << this->_attack;
 		std::cout << " points of damage!" RES << std::endl;
+	}
+	if (this->_hit == 0 && this->_energy == 0)
+	{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " could not attack, it is out of energy and health " << std::endl;
 		return ;
 	}
-	else if (this->_energy == 0)
+	if (this->_energy == 0)
 	{
 		std::cout << "ClapTrap " << this->_name;
 		std::cout << " could not attack, it is out of energy " << std::endl;
@@ -100,15 +105,39 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hit + amount >= 10)
+	if (this->_hit == 0 && this->_energy == 0)
 	{
-		std::cout << GRN "ClapTrap " << this->_name;
-		std::cout << " is already at full health " RES << std::endl;
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " could not repair, it is out of energy and health " << std::endl;
 		return ;
 	}
-	if (this->_energy != 0 || this->_hit != 0)
+	if (this->_energy == 0)
 	{
-		this->_energy--;
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " could not repair, it is out of energy " << std::endl;
+		return ;
+	}
+	if (this->_hit == 0)
+	{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " could not repair, it is out of health " << std::endl;
+		return ;
+	}
+	if (this->_hit == 10)
+	{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " did not repair because it is already at full health " << RES  << std::endl;
+		return ;
+	}
+	this->_energy--;
+	if (this->_hit + amount >= 10)
+	{
+		this->_hit = 10;
+		std::cout << GRN "ClapTrap " << this->_name;
+		std::cout << " repaired itself and is now at full health: " << this->_hit << RES << std::endl;
+	}
+	else
+	{
 		this->_hit += amount;
 		std::cout << GRN "ClapTrap " << this->_name;
 		std::cout << " repaired itself with " << amount;
