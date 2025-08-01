@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+         #
+#    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/18 19:02:10 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/07/30 15:42:25 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/08/01 18:01:56 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ OBJ = $(SRC:.cpp=.o)
 
 
 COMP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow #-Wno-shadow
 GDB = -g
 RM = rm -f
 VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes

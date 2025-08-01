@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 22:45:25 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:57:42 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 17:57:00                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ DiamondTrap::DiamondTrap(const std::string& name)
 	_hit = FragTrap::_hit;
 	_energy = ScavTrap::_energy;
 	_attack = FragTrap::_attack;
+	_maxhint = FragTrap::_hit;
 }
 
 DiamondTrap::~DiamondTrap()

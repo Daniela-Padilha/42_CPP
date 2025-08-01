@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:09:52 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/08/01 16:08:47                                             */
+/*  Updated:    2025/08/01 17:52:11                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /*------------------------------Constructors---------------------------------*/
 
-ClapTrap::ClapTrap() : _name("Not set"), _hit(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap() : _name("Not set"), _hit(10), _energy(10), _attack(0), _maxhit(10)
 {
 	std::cout << BGRN "ClapTrap default constructor called" RES << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string name) : _hit(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap(const std::string name) : _hit(10), _energy(10), _attack(0), _maxhit(10)
 {
 	std::cout << BGRN "ClapTrap name constructor called" RES << std::endl;
 	this->_name = name;
@@ -90,14 +90,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 	else if (amount >= this->_hit)
 	{
 		this->_hit = 0;
-		std::cout << BRED "ClapTrap " << this->_name;
+		std::cout << RED "ClapTrap " << this->_name;
 		std::cout << " was attacked and took " << amount;
 		std::cout << " of damage. Current health is " << this->_hit << RES << std::endl;
 	}
 	else
 	{
 		this->_hit -= amount;
-		std::cout << BRED "ClapTrap " << this->_name;
+		std::cout << RED "ClapTrap " << this->_name;
 		std::cout << " was attacked and took " << amount;
 		std::cout << " of damage. Current health is " << this->_hit << RES << std::endl;
 	}
@@ -123,16 +123,16 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << " could not repair, it is out of health " << std::endl;
 		return ;
 	}
-	if (this->_hit == 10)
+	if (this->_hit == _maxhit)
 	{
 		std::cout << "ClapTrap " << this->_name;
 		std::cout << " did not repair because it is already at full health " << RES  << std::endl;
 		return ;
 	}
 	this->_energy--;
-	if (this->_hit + amount >= 10)
+	if (this->_hit + amount >= _maxhit)
 	{
-		this->_hit = 10;
+		this->_hit = _maxhit;
 		std::cout << GRN "ClapTrap " << this->_name;
 		std::cout << " repaired itself and is now at full health: " << this->_hit << RES << std::endl;
 	}

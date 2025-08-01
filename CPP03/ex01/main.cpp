@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:12:29 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:59:57 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 17:49:10                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,35 @@ int main()
 {
 	ClapTrap weapon("sword");
 
-	std::cout << CYA "\n	-------First Oponent------\n" RES << std::endl;
+	std::cout << CYA "\n	-------First Oponent------" RES << std::endl;
 	weapon.attack("stick");
 	weapon.takeDamage(2);
 	weapon.beRepaired(1);
+	weapon.beRepaired(5);
 
-	std::cout << CYA "\n	------Second Oponent------\n" RES << std::endl;
+	std::cout << CYA "\n	------Second Oponent------" RES << std::endl;
 	weapon.attack("axe");
-	weapon.takeDamage(10);
+	weapon.takeDamage(9);
 	weapon.attack("axe");
 	weapon.beRepaired(6);
+	weapon.beRepaired(6);
+	weapon.beRepaired(1);
 	weapon.attack("axe");
 
-	std::cout << CYA "\n	-------Third Oponent------\n" RES << std::endl;
-	for(int i = 0; i < 10; i++)
+	std::cout << CYA "\n	-------Third Oponent------" RES << std::endl;
+	for(int i = 0; i < 3; i++)
 		weapon.attack("bomb");
 	weapon.takeDamage(10);
+	weapon.beRepaired(1);
 	weapon.takeDamage(10);
+	std::cout << std::endl;
 
-	std::cout << CYA "\n	---------ScavTrap---------\n" RES << std::endl;
+	std::cout << CYA "\n	---------ScavTrap---------" RES << std::endl;
 	ScavTrap robot("WALL-E");
-	robot.attack("garbage");
-	robot.takeDamage(15);
-	robot.beRepaired(10);
+	robot.takeDamage(30);
+	robot.beRepaired(35);
+	for (int i = 0; i < 49; i++)
+		robot.attack("garbage");
 	std::cout << std::endl;
 	robot.guardGate();
 	std::cout << std::endl;

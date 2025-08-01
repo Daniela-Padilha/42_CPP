@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:02:53 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:20:27 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/01 17:45:51 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@
 
 class ClapTrap {
 	protected:
-		std::string				_name;
-		unsigned int			_hit;
-		unsigned int			_energy;
-		unsigned int			_attack;
+		std::string		_name;
+		unsigned int	_hit;
+		unsigned int	_energy;
+		unsigned int	_attack;
+		unsigned int	_maxhit;
 	public:
 		ClapTrap();
 		ClapTrap(const std::string name);

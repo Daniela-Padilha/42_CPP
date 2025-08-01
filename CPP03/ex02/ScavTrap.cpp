@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:38:29 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:49:08 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 17:51:41                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 	_hit = 100;
 	_energy = 50;
 	_attack = 20;
+	_maxhit = 100;
 }
 
 ScavTrap::~ScavTrap()
@@ -54,13 +55,18 @@ void ScavTrap::attack(const std::string& target)
 	if (this->_energy != 0 && this->_hit != 0)
 	{
 		this->_energy--;
-		std::cout << BRED "ScavTrap " << this->_name;
+		std::cout << RED "ScavTrap " << this->_name;
 		std::cout << " attacks " << target;
 		std::cout << " causing " << this->_attack;
 		std::cout << " points of damage!" RES << std::endl;
+	}
+	if (this->_hit == 0 && this->_energy == 0)
+	{
+		std::cout << "ScavTrap " << this->_name;
+		std::cout << " could not attack, it is out of energy and health " << std::endl;
 		return ;
 	}
-	else if (this->_energy == 0)
+	if (this->_energy == 0)
 	{
 		std::cout << "ScavTrap " << this->_name;
 		std::cout << " could not attack, it is out of energy " << std::endl;

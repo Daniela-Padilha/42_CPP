@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:46:52 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:50:53 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 17:51:51                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 	_hit = 100;
 	_energy = 100;
 	_attack = 30;
+	_maxhit = 100;
 }
 
 FragTrap::~FragTrap()
