@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:12:29 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:17:08 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 15:18:22                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	weapon.takeDamage(10);
 	weapon.attack("axe");
 	weapon.beRepaired(6);
+	weapon.beRepaired(20);
 	weapon.attack("axe");
 
 	std::cout << CYA "\n	-------Third Oponent------" RES << std::endl;

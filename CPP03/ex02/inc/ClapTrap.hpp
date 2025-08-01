@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:02:53 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:43:21 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/01 15:23:40 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define BGRN "\033[32;1m"
 # define BYEL "\033[33;1m"
 # define CYA "\033[0;36m"
+# define GRN "\033[0;32m"
 # define BMAG "\033[35;1m"
 
 class ClapTrap {

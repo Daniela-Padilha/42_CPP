@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:09:52 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 15:45:22 by ddo-carm         ###   ########.fr       */
+/*  Updated:    2025/08/01 15:26:20                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /*------------------------------Constructors---------------------------------*/
 
-ClapTrap::ClapTrap() : _hit(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap() : _name("Not set"), _hit(10), _energy(10), _attack(0)
 {
 	std::cout << BGRN "ClapTrap default constructor called" RES << std::endl;
-	this->_name = "Not set";
 }
 
 ClapTrap::ClapTrap(const std::string name) : _hit(10), _energy(10), _attack(0)
@@ -101,23 +100,18 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->_hit + amount >= 10)
+	{
+		std::cout << GRN "ClapTrap " << this->_name;
+		std::cout << " is already at full health " RES << std::endl;
+		return ;
+	}
 	if (this->_energy != 0 || this->_hit != 0)
 	{
 		this->_energy--;
 		this->_hit += amount;
-		std::cout << BGRN "ClapTrap " << this->_name;
+		std::cout << GRN "ClapTrap " << this->_name;
 		std::cout << " repaired itself with " << amount;
 		std::cout << " points. Current health is " << this->_hit << RES << std::endl;
-		return ;
-	}
-		else if (this->_energy == 0)
-	{
-		std::cout << "ClapTrap " << this->_name;
-		std::cout << " could not attack, it is out of energy " << std::endl;
-	}
-	else if (this->_hit == 0)
-	{
-		std::cout << "ClapTrap " << this->_name;
-		std::cout << " could not attack, needs repairing " << std::endl;
 	}
 }
