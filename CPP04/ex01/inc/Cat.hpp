@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:50:35 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 18:01:08 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/02 19:02:10 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Cat : public Animal {
 		Cat& operator = (const Cat& other);
 
 		void makeSound() const;
+		Brain* getBrain() const;
 };
 
 #endif

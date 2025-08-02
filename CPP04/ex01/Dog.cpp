@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:59:24 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/07/27 16:11:28                                             */
+/*  Updated:    2025/08/02 19:34:26                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog& other) : Animal()
 {
 	std::cout << BYEL"Dog copy constructor was called" RES << std::endl;
-	*this = other;
+	this->_type = other._type;
+	this->_brain = new Brain (*other._brain);
 }
 
 /*-------------------------------Destructors---------------------------------*/
@@ -43,6 +44,8 @@ Dog& Dog::operator = (const Dog& other)
 	if (this != &other)
 	{
 		this->_type = other._type;
+		delete (this->_brain);
+		this->_brain = new Brain(*other._brain);
 	}
 	return (*this);
 }
@@ -52,4 +55,9 @@ Dog& Dog::operator = (const Dog& other)
 void Dog::makeSound() const
 {
 	std::cout << BMAG "Dog: Woof woof" RES << std::endl;
+}
+
+Brain* Dog::getBrain() const
+{
+	return (_brain);
 }

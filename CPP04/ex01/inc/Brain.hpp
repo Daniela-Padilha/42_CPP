@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 16:56:01 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/07/30 18:10:16 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/02 19:04:14 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ class Brain
 		~Brain();
 		Brain(const Brain& other);
 		Brain& operator = (const Brain& other);
+
+		void setIdeas(int index, std::string idea);
+		std::string getIdea(int index) const;
 };
 
 #endif
