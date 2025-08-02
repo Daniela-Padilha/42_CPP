@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/27 16:56:01 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/08/02 19:04:14 by ddo-carm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+
+# include <iostream>
+
+# define RES "\033[0m"
+# define BRED "\033[31;1m"
+# define BGRN "\033[32;1m"
+# define BYEL "\033[33;1m"
+# define CYA "\033[0;36m"
+# define BMAG "\033[35;1m"
+
+class Brain
+{
+	private:
+		std::string _ideas[100];
+	public:
+		Brain();
+		~Brain();
+		Brain(const Brain& other);
+		Brain& operator = (const Brain& other);
+
+		void setIdeas(int index, std::string idea);
+		std::string getIdea(int index) const;
+};
+
+#endif
