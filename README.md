@@ -1,4 +1,4 @@
-# 📘 42 C++ Modules Exercises
+# 📘 42 C++ Modules
 
 This repository contains my solutions to the 42 C++ modules (00 to 09). Each file demonstrates a specific concept or set of concepts from modern C++ (C++98 to C++ canonical form), following the school's progression.
 
@@ -30,7 +30,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 |-----------------------|-----------------------------------------------------|
 | ex00                  | Orthodox Canonical Form, fixed-point arithmetic     |
 | ex01                  | Copy constructor, assignment operator               |
-| ex02                  | Roundf, operator overloading                        |
+| ex02                  | Roundf, operator overloading, static polymorphism   |
 
 ---
 
@@ -45,10 +45,10 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 ---
 
 ## 🎯 Module 04 — Abstract Classes & Interfaces
-| File                  | Concept                                           |
-|-----------------------|---------------------------------------------------|
-| ex00                  | Abstract classes, virtual methods, polymorphism   |
-| ex01                  | Deep copies, dynamic memory in class members      |
+| File                  | Concept                                                   |
+|-----------------------|-----------------------------------------------------------|
+| ex00                  | Abstract classes, virtual methods, dynamic polymorphism   |
+| ex01                  | Deep copies, dynamic memory in class members              |
 | ex02                  |
 | ex03                  |
 
