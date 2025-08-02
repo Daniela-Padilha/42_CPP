@@ -49,8 +49,8 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 |-----------------------|-----------------------------------------------------------|
 | ex00                  | Abstract classes, virtual methods, dynamic polymorphism   |
 | ex01                  | Deep copies, dynamic memory in class members              |
-| ex02                  |
-| ex03                  |
+| ex02                  | Abstract classes, pure virtual functions                  |
+| ex03                  | Interfaces                                                |
 
 ---
 
