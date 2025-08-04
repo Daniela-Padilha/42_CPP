@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 20:01:00 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/04 20:11:16 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/08/04 19:47:35 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/08/04 20:49:28 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <string>
 # include <iostream>
@@ -24,27 +24,29 @@
 # define CYA "\033[0;36m"
 # define BMAG "\033[35;1m"
 
-class AMateria
+class Ice : public AMateria
 {
-	public:
-		AMateria();
-		AMateria(const AMateria& other);
-		AMateria(std::string const & type);
-		virtual ~AMateria();
-		AMateria& operator = (AMateria& const other);
+private:
+	std::string _type;
+public:
+	Ice();
+	Ice(Ice& const other);
+	~Ice();
+	Ice& operator = (Ice& const other);
 
-		std::string const & getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+	void setType(std::string& type);
+	Ice *clone() const;
+	void use(ICharacter& target);
 };
 
-AMateria::AMateria()
+Ice::Ice(/* args */)
 {
 }
 
-AMateria::~AMateria()
+Ice::~Ice()
 {
 }
+
 
 
 #endif

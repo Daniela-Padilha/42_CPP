@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 20:01:00 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/04 20:11:16 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/08/04 19:37:12 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/08/04 20:12:03 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-# include <string>
-# include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 # define RES "\033[0m"
 # define BRED "\033[31;1m"
@@ -24,27 +22,14 @@
 # define CYA "\033[0;36m"
 # define BMAG "\033[35;1m"
 
-class AMateria
+class ICharacter
 {
 	public:
-		AMateria();
-		AMateria(const AMateria& other);
-		AMateria(std::string const & type);
-		virtual ~AMateria();
-		AMateria& operator = (AMateria& const other);
-
-		std::string const & getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
 };
-
-AMateria::AMateria()
-{
-}
-
-AMateria::~AMateria()
-{
-}
-
 
 #endif

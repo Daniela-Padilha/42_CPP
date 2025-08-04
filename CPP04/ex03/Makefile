@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/18 23:48:14 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/08/02 20:00:59 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/08/04 20:00:50 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,16 @@ INC_D = inc
 
 #source files
 SRC = $(SRCS_D)/AMateria.cpp
+		$(SRCS_D)/ICharacter.cpp \
+		$(SRCS_D)/Cure.cpp \
+		$(SRCS_D)/Ice.cpp \
 		$(SRCS_D)/main.cpp \
 
 #include files
 INC = $(INC_D)/AMateria.hpp
+		$(INC_D)/ICharacter.hpp \
+		$(INC_D)/Cure.hpp \
+		$(INC_D)/Ice.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
