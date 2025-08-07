@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:47:35 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/04 20:49:28 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:46:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,17 @@
 
 class Ice : public AMateria
 {
-private:
-	std::string _type;
-public:
-	Ice();
-	Ice(Ice& const other);
-	~Ice();
-	Ice& operator = (Ice& const other);
+	private:
+		std::string _type;
+	public:
+		Ice();
+		Ice(Ice const &other);
+		~Ice();
+		Ice& operator = (Ice const &other);
 
-	void setType(std::string& type);
-	Ice *clone() const;
-	void use(ICharacter& target);
+		void setType(std::string& type);
+		Ice *clone() const;
+		void use(ICharacter& target);
 };
-
-Ice::Ice(/* args */)
-{
-}
-
-Ice::~Ice()
-{
-}
-
-
 
 #endif

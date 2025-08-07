@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 19:53:13 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/08/04 19:54:43                                             */
+/*   Created: 2025/08/07 13:51:05 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/08/07 15:06:33 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "inc/AMateria.hpp"
+#include "inc/Ice.hpp"
+#include "inc/Cure.hpp"
+#include "inc/Character.hpp"
+#include "inc/MateriaSource.hpp"
 
 int main()
 {

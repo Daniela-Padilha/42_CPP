@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 19:47:14 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 13:38:05 by ddo-carm         ###   ########.fr       */
+/*   Created: 2025/08/07 13:56:12 by ddo-carm          #+#    #+#             */
+/*   Updated: 2025/08/07 15:41:38 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include <string>
-# include <iostream>
 # include "ICharacter.hpp"
+# include <string>
 
-# define RES "\033[0m"
-# define BRED "\033[31;1m"
-# define BGRN "\033[32;1m"
-# define BYEL "\033[33;1m"
-# define CYA "\033[0;36m"
-# define BMAG "\033[35;1m"
-
-class Cure : public AMateria
+class Character: public ICharacter
 {
 	private:
-		std::string _type;
+		std::string _name;
+		AMateria* 	_slots[4];
 	public:
-		Cure();
-		Cure(Cure const &other);
-		~Cure();
-		Cure& operator = (Cure const &other);
+		Character();
+		Character(std::string &name);
+		Character(Character const &other);
+		~Character();
+		Character& operator = (Character const &other);
 
-		void setType(std::string& type);
-		Cure* clone() const;
-		void use(ICharacter& target);
+		std::string const & Character::getName() const;
+		void equip(AMateria& materia);
+		void unequip(int slot, ICharacter &player);
+		void use(int slot, ICharacter &player);
 };
 
 #endif

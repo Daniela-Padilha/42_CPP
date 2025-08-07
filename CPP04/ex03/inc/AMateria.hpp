@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 20:01:00 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/04 20:11:16 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:33:29 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,18 @@
 
 class AMateria
 {
+	protected:
+		std::string _type;
 	public:
 		AMateria();
-		AMateria(const AMateria& other);
-		AMateria(std::string const & type);
+		AMateria(AMateria const  &other);
+		AMateria(std::string const &type);
 		virtual ~AMateria();
-		AMateria& operator = (AMateria& const other);
+		AMateria& operator = (AMateria const &other);
 
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
-
-AMateria::AMateria()
-{
-}
-
-AMateria::~AMateria()
-{
-}
-
 
 #endif
