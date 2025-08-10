@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:43:58 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:46:28 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:03:26 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
-# include "AMateria.hpp"
 # include <string>
+
+class AMateria;
 
 class IMateriaSource
 {

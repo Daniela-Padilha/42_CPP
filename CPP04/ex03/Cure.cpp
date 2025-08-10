@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:50:45 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:27:32 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:14:29 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /*------------------------------Constructors---------------------------------*/
 
-Cure::Cure(): _type("Not set")
+Cure::Cure(): AMateria("Cure")
 {
 	std::cout << BGRN "Cure default constructor called" RES << std::endl;
 }
 
-Cure::Cure(Cure const &other): _type(other._type)
+Cure::Cure(Cure const &other): AMateria(other)
 {
 	std::cout << BGRN "Cure copy constructor called" RES << std::endl;
 }
@@ -37,16 +37,11 @@ Cure& Cure::operator = (Cure const &other)
 {
 	std::cout << BYEL "Cure copy assignment operator called" RES << std::endl;
 	if (this != &other)
-		*this = other;
+		AMateria::operator=(other);
 	return (*this);
 }
 
 /*-----------------------------Member Functions------------------------------*/
-
-void Cure::setType(std::string& type)
-{
-	this->_type = type;
-}
 
 Cure* Cure::clone() const
 {

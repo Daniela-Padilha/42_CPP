@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:42:53 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/10 16:36:49 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:02:54 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define MATERIASOURCE_HPP
 
 # include <string>
+# include <iostream>
 # include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
 class MateriaSource: public IMateriaSource
 {

@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:37:12 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:46:14 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:00:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-# include "AMateria.hpp"
 # include <string>
 
 # define RES "\033[0m"
@@ -22,6 +21,8 @@
 # define BYEL "\033[33;1m"
 # define CYA "\033[0;36m"
 # define BMAG "\033[35;1m"
+
+class AMateria;
 
 class ICharacter
 {

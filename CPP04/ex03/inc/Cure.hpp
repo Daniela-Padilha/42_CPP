@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:47:14 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 13:38:05 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:18:28 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
 # define CURE_HPP
 
-# include <string>
 # include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 # define RES "\033[0m"
 # define BRED "\033[31;1m"
@@ -26,15 +25,12 @@
 
 class Cure : public AMateria
 {
-	private:
-		std::string _type;
 	public:
 		Cure();
 		Cure(Cure const &other);
-		~Cure();
+		virtual ~Cure();
 		Cure& operator = (Cure const &other);
 
-		void setType(std::string& type);
 		Cure* clone() const;
 		void use(ICharacter& target);
 };

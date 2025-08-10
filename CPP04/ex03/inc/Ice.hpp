@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 19:47:35 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 13:46:30 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:18:23 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include <string>
 # include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 # define RES "\033[0m"
 # define BRED "\033[31;1m"
@@ -26,15 +25,12 @@
 
 class Ice : public AMateria
 {
-	private:
-		std::string _type;
 	public:
 		Ice();
 		Ice(Ice const &other);
-		~Ice();
+		virtual ~Ice();
 		Ice& operator = (Ice const &other);
 
-		void setType(std::string& type);
 		Ice *clone() const;
 		void use(ICharacter& target);
 };

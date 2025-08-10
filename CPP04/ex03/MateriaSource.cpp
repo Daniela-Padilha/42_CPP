@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:42:56 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/10 16:54:23 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:16:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (this->_materias[i] == NULL)
 		{
-			this->_materias[i] == m->clone();
+			this->_materias[i] = m->clone();
 			std::cout << BGRN "Learned materia of type " << m->getType() << RES << std::endl;
 			delete m;
 			return ;

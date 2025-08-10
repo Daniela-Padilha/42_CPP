@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:50:35 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:27:36 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 17:15:55 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /*------------------------------Constructors---------------------------------*/
 
-Ice::Ice(): _type("Not set")
+Ice::Ice(): AMateria("Ice")
 {
 	std::cout << BGRN "Ice default constructor called" RES << std::endl;
 }
 
-Ice::Ice(Ice const &other): _type(other._type)
+Ice::Ice(Ice const &other): AMateria(other)
 {
 	std::cout << BGRN "Ice copy constructor called" RES << std::endl;
 }
@@ -37,16 +37,11 @@ Ice& Ice::operator = (Ice const &other)
 {
 	std::cout << BYEL "Ice copy assignment operator called" RES << std::endl;
 	if (this != &other)
-		*this = other;
+		AMateria::operator=(other);
 	return (*this);
 }
 
 /*-----------------------------Member Functions------------------------------*/
-
-void Ice::setType(std::string& type)
-{
-	this->_type = type;
-}
 
 Ice* Ice::clone() const
 {
