@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:56:12 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:41:38 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 16:11:03 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ class Character: public ICharacter
 	private:
 		std::string _name;
 		AMateria* 	_slots[4];
+		AMateria*	_floor[10];
+		int			_floorI;
+		
 	public:
 		Character();
 		Character(std::string &name);
@@ -29,9 +32,9 @@ class Character: public ICharacter
 		Character& operator = (Character const &other);
 
 		std::string const & Character::getName() const;
-		void equip(AMateria& materia);
-		void unequip(int slot, ICharacter &player);
-		void use(int slot, ICharacter &player);
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
 
 #endif
