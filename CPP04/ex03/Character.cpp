@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:55:46 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/10 16:19:15 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 16:33:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ Character::Character(Character const &other): _name(other._name), _floorI(0)
 
 Character::~Character()
 {
+	std::cout << BRED "Character destructor called" RES << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		delete this->_slots[i];
@@ -58,7 +59,6 @@ Character::~Character()
 	}
 	for (int i = 0; i < 10; i++)
 		delete this->_floor[i];
-	std::cout << BRED "Character destructor called" RES << std::endl;
 }
 
 /*------------------------------Operators------------------------------------*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:42:53 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/07 15:47:11 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/10 16:36:49 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@
 class MateriaSource: public IMateriaSource
 {
 	private:
-		/* data */
+		AMateria* _materias[4];
 	public:
-		MateriaSource(/* args */);
+		MateriaSource();
+		MateriaSource(MateriaSource& other);
 		~MateriaSource();
+		MateriaSource& operator = (MateriaSource& other);
+
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif
