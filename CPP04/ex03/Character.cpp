@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:55:46 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/08/10 17:30:15 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:36:02 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,12 @@ void Character::equip(AMateria* m)
 		if (this->_slots[i] == NULL)
 		{
 			this->_slots[i] = m;
-			std::cout << BGRN << m->getType() << " was equiped on slot number " << i << RES << std::endl;
+			std::cout << BGRN << m->getType() << " was equiped on slot number " << i << " by " << this->_name << RES << std::endl;
 			return ;
 		}
 	}
-	std::cout << BRED << this->_name << " slots' are full" RES << std::endl;	
+	std::cout << BRED << this->_name << " slots' are full" RES << std::endl;
+	delete m;
 }
 
 void Character::unequip(int idx)
@@ -119,7 +120,7 @@ void Character::unequip(int idx)
 	{
 		if (_floorI < 10)
 		{
-			std::cout << BRED << this->_slots[idx]->getType() << " was unequiped and is now on the floor" RES << std::endl;
+			std::cout << BRED << this->_slots[idx]->getType() << " was unequiped by " << this->_name << " and is now on the floor" RES << std::endl;
 			this->_floor[_floorI++] = this->_slots[idx];
 			this->_slots[idx] = NULL;
 			return ;
