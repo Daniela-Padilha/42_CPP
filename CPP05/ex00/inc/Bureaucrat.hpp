@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:38 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/09/28 19:04:55 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:36:04 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,37 @@
 
 # include <iostream>
 # include <string>
+# include <exception>
 
 class Bureaucrat {
 	private:
-	const std::string 	_name;
-	unsigned int		_grade;
+		const std::string 	_name;
+		unsigned int		_grade;
 	
 	public:
-	Bureaucrat();
-	Bureaucrat(const Bureaucrat& other);
-	~Bureaucrat();
+		Bureaucrat();
+		Bureaucrat(std::string name, unsigned int grade);
+		Bureaucrat(const Bureaucrat& other);
+		~Bureaucrat();
 	
-	Bureaucrat& operator = (const Bureaucrat& other);
+		Bureaucrat& operator = (const Bureaucrat& other);
 	
-	const std::string		getName() const;
-	unsigned int			getGrade() const;
-	unsigned int			increment();
-	unsigned int			decrement();
+		const std::string		getName() const;
+		unsigned int			getGrade() const;
+		void					increment();
+		void					decrement();
 	
-	class GradeTooHighException: public std::exception
-	{
-		public:
-		
-	};
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
-	class GradeTooLowException: public std::exception
-	{
-		public:
-		
-	};
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 std::ostream& operator << (std::ostream& output, const Bureaucrat& b); 
