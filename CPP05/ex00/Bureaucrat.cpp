@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 16:23:55 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/18 18:01:51 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void	Bureaucrat::decrement()
 		std::cout << BGRN "New Grade: " << getGrade() << "\n" RES;
 	}
 }
+
+/*----------------------------Exception Classes------------------------------*/
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
