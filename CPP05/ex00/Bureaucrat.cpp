@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 18:01:51 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:26:21 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ std::ostream& operator << (std::ostream& output, const Bureaucrat& b)
 
 const std::string Bureaucrat::getName() const
 {
-	return (_name);
+	return (this->_name);
 }
 unsigned int Bureaucrat::getGrade() const
 {
-	return (_grade);
+	return (this->_grade);
 }
 
 void	Bureaucrat::increment()
