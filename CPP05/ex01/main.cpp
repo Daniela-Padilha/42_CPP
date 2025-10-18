@@ -3,99 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 18:27:22 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 18:22:19 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/19 00:37:01 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Bureaucrat.hpp"
+#include "inc/Form.hpp"
 
 int main()
 {
-	std::cout << BMAG "\n	Creation with valid grades\n" RES;
+	std::cout << BMAG "\n	Bureaucrat Creation\n" RES;
+	Bureaucrat ham("Hamilton", 4);
+	Bureaucrat ver("Verstappen", 2);
+
+	std::cout << BMAG "\n	Form Creation\n" RES;
+	Form ferrari("Ferrari", 4, 4);
+	Form redbull("RedBull", 1, 1);
+
+	std::cout << BMAG "\n	Form Details\n" RES;
+	std::cout << ferrari << std::endl;
+	std::cout << redbull << std::endl;
+
+	std::cout << BMAG "\n	Sign Forms\n" RES;
+	ham.signForm(ferrari);
+	ham.signForm(redbull);
+	ver.signForm(redbull);
+
+	std::cout << BMAG "\n	Form Details Again\n" RES;
+	std::cout << ferrari << std::endl;
+	std::cout << redbull << std::endl;
+
+	std::cout << BMAG "\n	Verstappen increment and sign form\n" RES;
+	ver.increment();
+	ver.signForm(redbull);
+	std::cout << redbull << std::endl;
+
+	std::cout << BMAG "\n	Out of Range Form Creation\n" RES;
 	try {
-		Bureaucrat ham("Hamilton", 4);
+		Form haas("Haas", 200, 200);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
 	}
 	try {
-		Bureaucrat ver("Verstappen", 2);
+		Form williams("Williams", -1, -1);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
 	}
 
-	std::cout << BMAG "\n	Creation with invalid grades\n" RES;
-	std::cout << "Creating Latifi with grade 200\n";
-	try {
-		Bureaucrat lat("Latifi", 200);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	std::cout << "\nCreating Alonso with grade 0\n";
-	try {
-		Bureaucrat alo("Alonso", 0);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	std::cout << "\n	 ------------------------" << std::endl; 
-	std::cout << BMAG "\n	New Creation for more tests\n" RES;
-	Bureaucrat nor("Norris", 2);
-	Bureaucrat lec("Leclerc", 149);
-	
-	std::cout << BMAG "\n	Using insertion operator\n" RES;
-	std::cout << nor << std::endl;
-	std::cout << lec << std::endl;
-	
-	std::cout << BMAG "\n	Increment inside range\n" RES;
-	try {
-		nor.increment();
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	
-	std::cout << BMAG "\n	Decrement inside range\n" RES;
-	try {
-		lec.decrement();
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	std::cout << BMAG "\n	Increment outside range\n" RES;
-	std::cout << "Incrementing Norris again\n";
-	try {
-		nor.increment();
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	
-	std::cout << BMAG "\n	Decrement outside range\n" RES;
-	std::cout << "Decrementing Leclerc again\n";
-	try {
-		lec.decrement();
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	std::cout << BMAG "\n	Deep copy check\n" RES;
-	std::cout << "Creating norCopy\n";
-	Bureaucrat norCopy(nor);
-	std::cout << norCopy << std::endl;
-
-	std::cout << "\nDecrementing norCopy\n";
-	try {
-		norCopy.decrement();
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	std::cout << "\nGrade of norCopy\n";
-	std::cout << norCopy << std::endl;
-	std::cout << "\nGrade of nor\n";
-	std::cout << nor << std::endl;
-	
 	std::cout << BMAG "\n	Destruction\n" RES;
 	return (0);
 }

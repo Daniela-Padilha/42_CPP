@@ -3,42 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:37 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 18:33:02 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/19 00:24:46 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
-# define FROM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
 # include <exception>
-# include "Bureaucrat.hpp"
+
+/*forward declaration*/
+class Bureaucrat;
 
 class Form {
 	private:
 		const std::string 	_name;
-		const unsigned int	_signGrade;
-		const unsigned int	_executeGrade;
+		const int			_signGrade;
+		const int			_executeGrade;
 		bool				_isSigned;
 		
 	public:
 		Form();
-		Form(std::string name, unsigned int signGrade,
-				unsigned int executeGrade, bool issigned);
+		Form(std::string name, int signGrade, int executeGrade);
 		Form(const Form& other);
 		~Form();
 		
 		Form& operator = (const Form& other);
 		
 		const std::string		getName() const;
-		const unsigned int		getSignGrade() const;
-		const unsigned int		getExecuteGrade() const;
-		bool					getSigned() const;
-		void					beSigned(Bureaucrat b);
+		int						getSignGrade() const;
+		int						getExecuteGrade() const;
+		bool					getIsSigned() const;
+		void					beSigned(Bureaucrat& b);
 	
 	class GradeTooHighException: public std::exception {
 		public:

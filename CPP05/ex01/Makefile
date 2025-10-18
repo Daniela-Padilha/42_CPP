@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+         #
+#    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/28 15:48:14 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/10/18 16:48:09 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/10/19 00:09:43 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,18 @@
 # /__________)                                        (__________\ 
 
 
-NAME = bureaucrat
+NAME = form
 SRCS_D = .
 INC_D = inc
 
 #source files
 SRC = $(SRCS_D)/Bureaucrat.cpp \
-		$(SRCS_D)/Form.cpp
+		$(SRCS_D)/Form.cpp \
 		$(SRCS_D)/main.cpp \
 
 #include files
 INC = $(INC_D)/Bureaucrat.hpp \
-		$(INC_D)/Form.hpp
+		$(INC_D)/Form.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)

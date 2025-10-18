@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 18:01:51 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/19 00:30:37 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Bureaucrat.hpp"
+#include "inc/Form.hpp"
 
 /*------------------------------Constructors---------------------------------*/
 
@@ -19,7 +20,7 @@ Bureaucrat::Bureaucrat(): _name("Not defined"), _grade(150)
 	std::cout << BGRN "Bureaucrat was created\n" RES;
 }
 
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade): _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -54,7 +55,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other)
 
 std::ostream& operator << (std::ostream& output, const Bureaucrat& b)
 {
-	output << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+	output << CYA << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
 	return (output);
 }
 
@@ -62,11 +63,12 @@ std::ostream& operator << (std::ostream& output, const Bureaucrat& b)
 
 const std::string Bureaucrat::getName() const
 {
-	return (_name);
+	return (this->_name);
 }
-unsigned int Bureaucrat::getGrade() const
+
+int Bureaucrat::getGrade() const
 {
-	return (_grade);
+	return (this->_grade);
 }
 
 void	Bureaucrat::increment()
@@ -90,6 +92,18 @@ void	Bureaucrat::decrement()
 		this->_grade++;
 		std::cout << BGRN << getName() << "'s grade was decremented\n";
 		std::cout << BGRN "New Grade: " << getGrade() << "\n" RES;
+	}
+}
+
+void	Bureaucrat::signForm(Form& f)
+{
+	try {
+		f.beSigned(*this);
+		std::cout << BGRN << getName() << " signed " << f.getName() << "\n" RES;
+	}
+	catch (std::exception& error) {
+		std::cout << BGRN << getName() << " couldn’t sign " << f.getName()
+					<< " because " << error.what() << "\n";
 	}
 }
 
