@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:38 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/09/29 19:36:04 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/19 00:23:18 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 class Bureaucrat {
 	private:
 		const std::string 	_name;
-		unsigned int		_grade;
+		int					_grade;
 	
 	public:
 		Bureaucrat();
-		Bureaucrat(std::string name, unsigned int grade);
+		Bureaucrat(std::string name,  int grade);
 		Bureaucrat(const Bureaucrat& other);
 		~Bureaucrat();
 	
 		Bureaucrat& operator = (const Bureaucrat& other);
 	
 		const std::string		getName() const;
-		unsigned int			getGrade() const;
+		int						getGrade() const;
 		void					increment();
 		void					decrement();
 	
