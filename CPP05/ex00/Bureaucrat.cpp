@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/09/29 19:37:19 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:23:55 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	Bureaucrat::increment()
 	else
 	{
 		this->_grade--;
-		std::cout << BGRN "Grade was incremented\n";
-		std::cout << BGRN "New Grade: " << getGrade() << "\n";
+		std::cout << BGRN << getName() << "'s grade was incremented\n";
+		std::cout << BGRN "New Grade: " << getGrade() << "\n" RES;
 	}
 }
 
@@ -88,17 +88,17 @@ void	Bureaucrat::decrement()
 	else
 	{
 		this->_grade++;
-		std::cout << BGRN "Grade was decremented\n";
-		std::cout << BGRN "New Grade: " << getGrade() << "\n";
+		std::cout << BGRN << getName() << "'s grade was decremented\n";
+		std::cout << BGRN "New Grade: " << getGrade() << "\n" RES;
 	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("\033[31;1mError: Grade too high\033[0m\n");
+	return ("\033[31;1mError: Grade too high\033[0m");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("\033[31;1m Error: Grade too low\033[0m\n");
+	return ("\033[31;1mError: Grade too low\033[0m");
 }
