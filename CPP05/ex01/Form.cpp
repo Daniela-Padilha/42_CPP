@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/18 18:36:52 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/18 18:41:33 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 /*------------------------------Constructors---------------------------------*/
 
-Form::Form()
+Form::Form(): _name("Undefined"), _signGrade(150), _executeGrade(150),
+				_isSigned(false)
 {
-	
+	std::cout << BGRN "A new form was created\n" RES;
 }
 
 Form::Form(std::string name, unsigned int signGrade,
@@ -34,7 +35,7 @@ Form::Form(const Form& other)
 
 Form::~Form()
 {
-	return;
+	std::cout << BRED << getName() << " form was destroyed" RES;
 }
 
 /*------------------------------Operators------------------------------------*/
