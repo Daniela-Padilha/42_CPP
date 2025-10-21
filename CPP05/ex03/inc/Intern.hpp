@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:16:12 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 21:26:17 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 22:03:46 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "PresidentialPardonForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "ShrubberyCreationForm.hpp"
+# include <exception>
 
 
 class Intern {
@@ -27,6 +28,11 @@ class Intern {
 
 		Intern& operator = (const Intern& other);
 		AForm*	makeForm(std::string formName, std::string formTarget);
+
+		class WrongForm: public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 #endif

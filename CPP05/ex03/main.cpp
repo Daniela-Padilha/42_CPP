@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 18:27:22 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 21:09:08 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 22:43:10 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,120 +14,63 @@
 #include "inc/PresidentialPardonForm.hpp"
 #include "inc/RobotomyRequestForm.hpp"
 #include "inc/ShrubberyCreationForm.hpp"
+#include "inc/Intern.hpp"
 
 int main()
 {
 	srand(time(NULL));
 
-	std::cout << BMAG "\n	Bureaucrat Creation\n" RES;
-	Bureaucrat nor("Norris", 2);
-	Bureaucrat rus("Russel", 40);
-	Bureaucrat ant("Antonelli", 100);
-	Bureaucrat lat("Latifi", 150);
+	std::cout << BMAG "\n	Bureaucrat, Intern and Form Creation\n" RES;
+	Bureaucrat nor("Norris", 1);
+	Intern newIntern;
+	AForm* form1;
+	AForm* form2;
+	AForm* form3;
+	AForm* form4;
+
+	std::cout << BMAG "\n	Intern Makes Forms\n" RES;
 	try {
-		Bureaucrat person("person", 0);
+		form1 = newIntern.makeForm("weird name", "target");
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
-	}
-
-	std::cout << BMAG "\n	Form Creation and << operator\n" RES;
-	ShrubberyCreationForm shrub("shrub");
-	std::cout << shrub << std::endl;
-	RobotomyRequestForm robot("robot");
-	std::cout << robot << std::endl;
-	PresidentialPardonForm pardon("pardon");
-	std::cout << robot << std::endl;
-
-	std::cout << BMAG "	Polymorphism test\n" RES;
-	AForm* form1 = new PresidentialPardonForm("pardon");
-	std::cout << *form1 << std::endl;
-
-	std::cout << BMAG "\n	Shrubbery Form Execution\n" RES;
-	try {
-		nor.executeForm(shrub);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		form1 = NULL;
 	}
 	std::cout << std::endl;
 
 	try {
-		nor.signForm(shrub);
-		nor.executeForm(shrub);
+		form2 = newIntern.makeForm("shrubbery creation", "shrub");
+		nor.signForm(*form2);
+		nor.executeForm(*form2);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
+		form2 = NULL;
 	}
 	std::cout << std::endl;
 
 	try {
-		lat.signForm(shrub);
-		lat.executeForm(shrub);
+		form3 = newIntern.makeForm("robotomy request", "robot");
+		nor.signForm(*form3);
+		nor.executeForm(*form3);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
+		form3 = NULL;
 	}
 	std::cout << std::endl;
 
 	try {
-		ant.signForm(shrub);
-		ant.executeForm(shrub);
+		form4 = newIntern.makeForm("presidential pardon", "pardon");
+		nor.signForm(*form4);
+		nor.executeForm(*form4);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << BMAG "\n	Robotomy Form Execution\n" RES;
-	for (int i = 0; i < 6; i++)
-	{
-		try {
-			nor.signForm(robot);
-			nor.executeForm(robot);
-		} catch (std::exception& error) {
-			std::cout << error.what() << std::endl;
-		}
-	}
-	std::cout << std::endl;
-
-	try {
-		lat.signForm(robot);
-		lat.executeForm(robot);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	try {
-		ant.signForm(robot);
-		ant.executeForm(robot);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	std::cout << std::endl;
-	
-	std::cout << BMAG "\n	Presidential Form Execution\n" RES;
-	try {
-		lat.signForm(pardon);
-		lat.executeForm(pardon);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	try {
-		nor.signForm(pardon);
-		nor.executeForm(pardon);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	try {
-		rus.signForm(pardon);
-		rus.executeForm(pardon);
-	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		form4 = NULL;
 	}
 	std::cout << std::endl;
 
 	std::cout << BMAG "\n	Destruction\n" RES;
-	delete form1;
+	if (form1) delete form1;
+	if (form2) delete form2;
+	if (form3) delete form3;
+	if (form4) delete form4;
 	return (0);
 }
