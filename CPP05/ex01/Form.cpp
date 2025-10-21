@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/19 00:35:01 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:34:36 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Form::~Form()
 
 Form& Form::operator = (const Form& other)
 {
-	std::cout << "Form copy assignment operator was called\n";
+	std::cout << CYA "Form copy assignment operator was called\n" RES;
 	if (this != &other)
 	{
 		this->_isSigned = other._isSigned;
@@ -87,7 +87,7 @@ bool	Form::getIsSigned() const
 	return (this->_isSigned);
 }
 
-void	Form::beSigned(Bureaucrat& b)
+void	Form::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() <= this->_signGrade)
 	{

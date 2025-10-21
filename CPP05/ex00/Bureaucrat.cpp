@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/19 00:30:34 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:34:51 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other)
 {
-	std::cout << "Bureaucrat copy assignment operator was called\n";
+	std::cout << CYA "Bureaucrat copy assignment operator was called\n" RES;
 	if (this != &other)
 		this->_grade = other._grade;
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:37 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/19 00:24:46 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:35:30 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Form {
 		int						getSignGrade() const;
 		int						getExecuteGrade() const;
 		bool					getIsSigned() const;
-		void					beSigned(Bureaucrat& b);
+		void					beSigned(const Bureaucrat& b);
 	
 	class GradeTooHighException: public std::exception {
 		public:
