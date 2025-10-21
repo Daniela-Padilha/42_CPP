@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:46:52 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 17:31:55 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 18:39:17 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
     : AForm(target, 145, 137), _target(target)
 {
-  std::cout << BGRN "A Shrubbery Creation Form with target <" << target << "> was created\n" RES;
+  std::cout << BGRN "A Shrubbery Creation Form with target " << target << " was created\n" RES;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
@@ -82,7 +82,7 @@ void		ShrubberyCreationForm::childExecute() const
   outfile << "              :###" << std::endl;
   outfile << "              ;###" << std::endl;
   outfile << "            ,####." << std::endl;
-  outfile << "/\/\/\/\/\/.######.\/\/\/\/\\" << std::endl;
+  outfile << "/\\/\\/\\/\\/\\/.######.\\/\\/\\/\\/\\" << std::endl;
   outfile.close();
   std::cout << BGRN "Shrubbery created in " << fileName << "\n" RES;
 }

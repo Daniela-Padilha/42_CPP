@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:00:06 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 17:37:56 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 18:39:32 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
 	: AForm(target, 25, 5), _target(target)
 {
-	std::cout << BGRN "A Presidential Pardon Form with target <" << _target << "> was created\n" RES;
+	std::cout << BGRN "A Presidential Pardon Form with target " << _target << " was created\n" RES;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)

@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/28 15:48:14 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/10/19 15:20:30 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/10/21 18:37:25 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,16 @@ INC_D = inc
 #source files
 SRC = $(SRCS_D)/Bureaucrat.cpp \
 		$(SRCS_D)/AForm.cpp \
+		$(SRCS_D)/PresidentialPardonForm.cpp \
+		$(SRCS_D)/RobotomyRequestForm.cpp \
+		$(SRCS_D)/ShrubberyCreationForm.cpp \
 		$(SRCS_D)/main.cpp \
 
 #include files
 INC = $(INC_D)/Bureaucrat.hpp \
+		$(INC_D)/PresidentialPardonForm.hpp \
+		$(INC_D)/RobotomyRequestForm.hpp \
+		$(INC_D)/ShrubberyCreationForm.hpp \
 		$(INC_D)/AForm.hpp \
 
 #object files

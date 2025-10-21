@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 17:35:08 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:08:02 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,5 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 const char* Bureaucrat::FormNotExecutableException::what() const throw()
 {
-	return ("\033[31;1mError: Form is not executable by this bureaucrat\033[0m");
+	return ("\033[31;1mError: Form is not signed\033[0m");
 }
