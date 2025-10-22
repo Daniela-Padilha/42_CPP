@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 18:27:22 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 21:09:08 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:46:28 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 	AForm* form1 = new PresidentialPardonForm("pardon");
 	std::cout << *form1 << std::endl;
 
-	std::cout << BMAG "\n	Shrubbery Form Execution\n" RES;
+	std::cout << BMAG "	Shrubbery Form Execution\n" RES;
 	try {
 		nor.executeForm(shrub);
 	} catch (std::exception& error) {
@@ -74,7 +74,7 @@ int main()
 	}
 	std::cout << std::endl;
 
-	std::cout << BMAG "\n	Robotomy Form Execution\n" RES;
+	std::cout << BMAG "	Robotomy Form Execution\n" RES;
 	for (int i = 0; i < 6; i++)
 	{
 		try {
@@ -83,6 +83,14 @@ int main()
 		} catch (std::exception& error) {
 			std::cout << error.what() << std::endl;
 		}
+	}
+	std::cout << std::endl;
+
+	try {
+		rus.signForm(robot);
+		rus.executeForm(robot);
+	} catch (std::exception& error) {
+		std::cout << error.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -102,7 +110,7 @@ int main()
 	}
 	std::cout << std::endl;
 	
-	std::cout << BMAG "\n	Presidential Form Execution\n" RES;
+	std::cout << BMAG "	Presidential Form Execution\n" RES;
 	try {
 		lat.signForm(pardon);
 		lat.executeForm(pardon);
@@ -127,7 +135,7 @@ int main()
 	}
 	std::cout << std::endl;
 
-	std::cout << BMAG "\n	Destruction\n" RES;
+	std::cout << BMAG "	Destruction\n" RES;
 	delete form1;
 	return (0);
 }

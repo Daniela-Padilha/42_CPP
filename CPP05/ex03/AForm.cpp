@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 20:07:47 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:29:52 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,9 @@ bool	AForm::getIsSigned() const
 
 void	AForm::beSigned(const Bureaucrat& b)
 {
-	if (b.getGrade() <= this->_signGrade)
+	if (this->getIsSigned())
+		throw FormAlreadySigned();
+	else if (b.getGrade() <= this->_signGrade)
 	{
 		_isSigned = true;
 		std::cout << BGRN "Form " << getName() << " was signed by " << b.getName() << "\n" RES;
@@ -117,6 +119,11 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("\033[31;1mError: Grade too low\033[0m");
+}
+
+const char* AForm::FormAlreadySigned::what() const throw()
+{
+	return ("\033[31;1mError: Form is already signed\033[0m");
 }
 
 const char* AForm::FormNotExecutableException::what() const throw()

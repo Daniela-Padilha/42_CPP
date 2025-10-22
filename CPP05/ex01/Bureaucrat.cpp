@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:02:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 17:34:38 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:06:32 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	Bureaucrat::signForm(Form& f)
 		std::cout << BGRN << getName() << " signed " << f.getName() << "\n" RES;
 	}
 	catch (std::exception& error) {
-		std::cout << BGRN << getName() << " couldn’t sign " << f.getName()
+		std::cout << BGRN << getName() << " couldn't sign " << f.getName()
 					<< " because " << error.what() << "\n";
 	}
 }

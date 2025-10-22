@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 18:27:22 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/21 22:43:10 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:48:10 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int main()
 	}
 	std::cout << std::endl;
 
-	std::cout << BMAG "\n	Destruction\n" RES;
+	std::cout << BMAG "	Destruction\n" RES;
 	if (form1) delete form1;
 	if (form2) delete form2;
 	if (form3) delete form3;

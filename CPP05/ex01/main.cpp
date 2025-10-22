@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 18:27:22 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/19 00:37:01 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:27:29 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int main()
 	std::cout << ferrari << std::endl;
 	std::cout << redbull << std::endl;
 
-	std::cout << BMAG "\n	Sign Forms\n" RES;
+	std::cout << BMAG "	Sign Forms\n" RES;
+	ham.signForm(ferrari);
 	ham.signForm(ferrari);
 	ham.signForm(redbull);
 	ver.signForm(redbull);
@@ -36,12 +37,12 @@ int main()
 	std::cout << ferrari << std::endl;
 	std::cout << redbull << std::endl;
 
-	std::cout << BMAG "\n	Verstappen increment and sign form\n" RES;
+	std::cout << BMAG "	Verstappen increment and sign form\n" RES;
 	ver.increment();
 	ver.signForm(redbull);
 	std::cout << redbull << std::endl;
 
-	std::cout << BMAG "\n	Out of Range Form Creation\n" RES;
+	std::cout << BMAG "	Out of Range Form Creation\n" RES;
 	try {
 		Form haas("Haas", 200, 200);
 	} catch (std::exception& error) {

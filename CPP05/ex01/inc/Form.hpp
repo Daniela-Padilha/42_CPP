@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 16:47:37 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/19 16:35:30 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:09:48 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ class Form {
 	};
 	
 	class GradeTooLowException: public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+
+	class FormAlreadySigned: public std::exception {
 		public:
 			virtual const char* what() const throw();
 	};
