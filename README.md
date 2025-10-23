@@ -53,14 +53,15 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 | ex03                  | Interfaces, pure abstract classes                         |
 
 ---
-# Next Modules Coming Soon (here is a preview)
+# Next Modules in Progress...
 
 ## 🛠 Module 05 — Exceptions
-| File               | Concept                            |
-|--------------------|------------------------------------|
-| ex00               | Exceptions, custom error handling  |
-| ex01               |
-| ex02               |
+| File               | Concept                                           |
+|--------------------|---------------------------------------------------|
+| ex00               | Exceptions, try and catch, custom error handling  |
+| ex01               | Virtual methods, operator overload                |
+| ex02               | Abstract classes, polymorphism                    |
+| ex03               | Switch Case                                       |
 
 ---
 
