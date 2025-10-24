@@ -6,11 +6,11 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:52:19 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/24 21:26:59 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:00:34 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "inc/Base.hpp"
 
 int main () {
 	std::srand(std::time(0));

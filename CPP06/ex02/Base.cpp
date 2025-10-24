@@ -6,14 +6,14 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:47:15 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/24 21:22:54 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:00:51 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "inc/Base.hpp"
+#include "inc/A.hpp"
+#include "inc/B.hpp"
+#include "inc/C.hpp"
 
 /*-------------------------------Destructors---------------------------------*/
 
