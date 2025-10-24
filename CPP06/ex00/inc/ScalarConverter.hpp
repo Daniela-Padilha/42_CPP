@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:22:01 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/23 17:04:31 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/24 15:40:10 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,27 @@
 
 # include <string>
 # include <iostream>
+# include <cstdlib>
+# include <climits>
+# include <cfloat>
+# include <cctype>
+
+enum Type {
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE,
+	PSEUDO,
+	INVALID
+};
 
 class ScalarConverter {
 	private:
 		ScalarConverter();
-		ScalarConverter(ScalarConverter& const other);
+		ScalarConverter(const ScalarConverter& other);
 		~ScalarConverter();
 
-		ScalarConverter& operator = (ScalarConverter& const other);
+		ScalarConverter& operator = (const ScalarConverter& other);
 	public:
 		static void convert(const std::string& value);
 };
