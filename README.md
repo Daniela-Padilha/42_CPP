@@ -68,9 +68,9 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 ## ⚙️ Module 06 — Casting
 | File                  | Concept                                                  |
 |-----------------------|----------------------------------------------------------|
-| ex00                  | Dynamic casting, type identification, static functions   |
-| ex01                  |
-| ex02                  |
+| ex00                  | Static casting, type identification, static functions    |
+| ex01                  | Reinterpret casting, uintptr_t                           |
+| ex02                  | Dynamic casting by pointer and reference, try and catch  |
 
 ---
 
