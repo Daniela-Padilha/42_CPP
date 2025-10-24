@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 17:18:28 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/10/24 18:33:44 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/10/24 18:42:41 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC = $(SRCS_D)/Serializer.cpp \
 
 #include files
 INC = $(INC_D)/Serializer.hpp \
+		$(INC_D)/Data.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)

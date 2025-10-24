@@ -6,13 +6,15 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 18:28:02 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/24 18:35:48 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:54:49 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 
+# include "Data.hpp"
+# include <stdint.h>
 
 class Serializer {
 	private:
@@ -21,6 +23,7 @@ class Serializer {
 		~Serializer();
 
 		Serializer& operator = (const Serializer& other);
+
 	public:
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);

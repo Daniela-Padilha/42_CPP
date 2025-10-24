@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 18:33:52 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/24 18:36:47 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/24 19:02:16 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,16 @@ Serializer& Serializer::operator = (const Serializer& other)
 	return (*this);
 }
 
-/*-----------------------------Helper Functions------------------------------*/
-
-
 /*-----------------------------Member Functions------------------------------*/
 
 uintptr_t Serializer::serialize(Data* ptr)
 {
-
+	uintptr_t newType = reinterpret_cast<uintptr_t>(ptr);
+	return (newType);
 }
 
 Data* Serializer::deserialize(uintptr_t raw)
 {
-
+	Data* newType = reinterpret_cast<Data*>(raw);
+	return (newType);
 }
