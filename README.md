@@ -53,7 +53,6 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 | ex03                  | Interfaces, pure abstract classes                         |
 
 ---
-# Next Modules in Progress...
 
 ## 🛠 Module 05 — Exceptions
 | File               | Concept                                           |
@@ -75,11 +74,11 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 ---
 
 ## 🎲 Module 07 — Templates
-| File                | Concept                        |
-|---------------------|--------------------------------|
-| ex00                | Function templates             |
-| ex01                | Class templates                |
-| ex02                |
+| File                | Concept                                          |
+|---------------------|--------------------------------------------------|
+| ex00                | Function templates                               |
+| ex01                | Function template overload, function pointer     |
+| ex02                | Class templates                                  |
 
 ---
 
