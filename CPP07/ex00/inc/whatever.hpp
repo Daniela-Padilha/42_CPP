@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 21:59:44 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/10/24 22:27:44 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/10/26 14:54:46 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WHATEVER_HPP
-# define WAHTEVER_HPP
+# define WHATEVER_HPP
 
 template <typename T> void swap(T &value1, T &value2)
 {
