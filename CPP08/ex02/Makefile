@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 21:44:26 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/10/25 23:36:20 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/11/05 19:44:22 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@
 # /__________)                                        (__________\ 
 
 
-NAME = array
+NAME = mutant
 SRCS_D = .
 INC_D = inc
 
@@ -27,7 +27,7 @@ INC_D = inc
 SRC = $(SRCS_D)/main.cpp \
 
 #include files
-INC = $(INC_D)/Array.hpp \
+INC = $(INC_D)/MutantStack.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
