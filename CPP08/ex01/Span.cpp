@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:59:54 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/11/05 19:14:51                                             */
+/*  Updated:    2025/11/05 19:36:20                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void Span::addNumber(int nbr)
 
 int Span::shortestSpan() const
 {
+	std::cout << "The shortest Span is ";
 	if (storage.size() > 1)
 	{
 		int distance = INT_MAX;
@@ -85,6 +86,7 @@ int Span::shortestSpan() const
 
 int Span::longestSpan() const
 {
+	std::cout << "The longest Span is ";
 	if (storage.size() > 1)
 	{
 		int min = *std::min_element(storage.begin(), storage.end());
