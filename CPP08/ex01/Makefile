@@ -6,7 +6,7 @@
 #    By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 21:44:26 by ddo-carm          #+#    #+#              #
-#    Updated: 2025/10/25 23:36:20 by ddo-carm         ###   ########.fr        #
+#    Updated: 2025/11/05 17:59:44 by ddo-carm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,16 @@
 # /__________)                                        (__________\ 
 
 
-NAME = array
+NAME = span
 SRCS_D = .
 INC_D = inc
 
 #source files
 SRC = $(SRCS_D)/main.cpp \
+		$(SRCS_D)/Span.cpp \
 
 #include files
-INC = $(INC_D)/Array.hpp \
+INC = $(INC_D)/Span.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
