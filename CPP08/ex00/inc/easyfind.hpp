@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 14:09:23 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/11/01 17:40:54 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:56:38 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,18 @@
 
 template <typename T> void easyfind(T& container, int val) {
 	typename T::iterator it = std::find(container.begin(), container.end(), val);
-	if (*it == val)
-			std::cout << BGRN "Found " << val << " in position " << *it << RES << std::endl;
+	if (it != container.end())
+			std::cout << BGRN "Found " << val << " in position " << std::distance(container.begin(), it) << RES << std::endl;
 	else
-		throw std::exception("Error: No occurrence was found\n");
+		throw std::runtime_error("Error: No occurrence was found\n");
+};
+
+template <typename T> void easyfind(const T& container, int val) {
+	typename T::const_iterator it = std::find(container.begin(), container.end(), val);
+	if (it != container.end())
+			std::cout << BGRN "Found " << val << " in position " << std::distance(container.begin(), it) << RES << std::endl;
+	else
+		throw std::runtime_error("Error: No occurrence was found\n");
 };
 
 #endif
