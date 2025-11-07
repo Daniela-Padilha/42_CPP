@@ -87,7 +87,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 |---------------------|------------------------------------------|
 | ex00                | Template functions with containers       |
 | ex01                | Efficient container algorithms and logic |
-| ex02                |
+| ex02                | Iterators and container adpaters         |
 
 ---
 
