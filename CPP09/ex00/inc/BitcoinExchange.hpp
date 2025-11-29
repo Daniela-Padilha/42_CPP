@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:31:30 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/11/28 19:31:45 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/11/29 16:17:17 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,27 @@
 
 class BitcoinExchange {
 	private:
-		std::map<int, std::string> data;
-		std::map<int, std::string> input;
+		std::map<std::string, float> _data;
 	public:
 		BitcoinExchange();
 		BitcoinExchange(const BitcoinExchange &other);
 		~BitcoinExchange();
+		BitcoinExchange& operator = (const BitcoinExchange &other);
+
+		void getData(std::ifstream &dataFile);
+		
 };
 
 void btc(std::ifstream &file);
-bool parse_input (std::ifstream &file);
+bool parseInput (std::ifstream &file);
+
+// -----------Colours-----------
+
+# define RES "\033[0m"
+# define BRED "\033[31;1m"
+# define BGRN "\033[32;1m"
+# define BYEL "\033[33;1m"
+# define CYA "\033[0;36m"
+# define BMAG "\033[35;1m"
 
 #endif
