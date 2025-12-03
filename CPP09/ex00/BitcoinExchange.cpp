@@ -14,61 +14,68 @@
 
 BitcoinExchange::BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {
-	
+BitcoinExchange::BitcoinExchange(std::ifstream &dataFile) {
+	std::string line;
+	std::getline(dataFile, line);
+	while (std::getline(dataFile, line)) {
+		size_t position = line.find(',');
+		if (position != std::string::npos) {
+			std::string date = line.substr(0, position);
+			int			val = std::atoi(line.substr(position + 1).c_str());
+			this->_data.insert(std::make_pair(date, val));
+		}
+	}
 }
 
-BitcoinExchange::~BitcoinExchange() {
-	
-}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other): _data(other._data) {}
+
+BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange& BitcoinExchange::operator = (const BitcoinExchange &other) {
-	
-}
-
-void BitcoinExchange::getData(std::ifstream &dataFile) {
-	std::string *line;
-	for (int i = 1; std::getline(dataFile, line[i], ','); i++) {
-		if (i % 2 != 0)
-			continue ;
-		this->_data.insert(line[i - 1], line[i]);
+	if (this != &other) {
+		this->_data = other._data;
 	}
+	return *this;
 }
 
-void btc(std::ifstream &file) {
-	BitcoinExchange bitcoin;
-	std::ifstream data("data.csv");
-	
-	if (!data.is_open()) {
-		std::cout << "Error: could not open data.csv." << std::endl;
-		return ;
-	}
-	std::cout << "Data opened!" << std::endl;
-	bitcoin.getData(data);
-	data.close();
-	if (!parseInput(file))
-		return ;
-	// calculate();
-}
-
-bool parseInput (std::ifstream &file) {
+void parseInput (std::ifstream &file) {
 	std::string line;
-	std::string value;
 	std::getline(file, line);
 	if (line.compare("date | value") != 0) {
 		std::cout << "Error: bad input" << std::endl;
-		return false;
 	}
-	while (std::getline(file, value, '|')) {
-		 
-				
+	while (std::getline(file, line)) {
+		size_t pos = line.find('|');
+		if (pos != std::string::npos) {
+			int			val = std::atoi(line.substr(pos + 2).c_str());
+			if (val < 0)
+				std::cout << "Error: not a positive number." << std::endl;
+			else if (val > 1000)
+				std::cout << "Error: too large a number." << std::endl;
+			//check date format;
+		}
+		else {
+			std::string	date = line.substr(0);
+			std::cout << "Error: bad input => " << date << std::endl;
+		}
 	}
-	std::cout << "Good job!" << std::endl;
-	return true;
 }
-
-
 
 // calculate () {
 	
 // }
+
+void btc(std::ifstream &file) {
+	std::ifstream data("data.csv");
+	if (!data.is_open()) {
+		std::cout << "Error: could not open data.csv." << std::endl;
+		return ;
+	}
+	BitcoinExchange bitcoin(data);
+	data.close();
+	parseInput(file);
+
+	std::cout << "done\n";
+	//calculate();
+	//print();
+}

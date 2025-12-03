@@ -24,16 +24,14 @@ class BitcoinExchange {
 		std::map<std::string, float> _data;
 	public:
 		BitcoinExchange();
+		BitcoinExchange(std::ifstream &dataFile);
 		BitcoinExchange(const BitcoinExchange &other);
 		~BitcoinExchange();
 		BitcoinExchange& operator = (const BitcoinExchange &other);
-
-		void getData(std::ifstream &dataFile);
-		
 };
 
 void btc(std::ifstream &file);
-bool parseInput (std::ifstream &file);
+void parseInput (std::ifstream &file);
 
 // -----------Colours-----------
 
