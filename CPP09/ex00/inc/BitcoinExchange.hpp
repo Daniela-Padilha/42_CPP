@@ -28,10 +28,14 @@ class BitcoinExchange {
 		BitcoinExchange(const BitcoinExchange &other);
 		~BitcoinExchange();
 		BitcoinExchange& operator = (const BitcoinExchange &other);
+
+		std::map<std::string, float> getData() const;
 };
 
-void btc(std::ifstream &file);
-void parseInput (std::ifstream &file);
+typedef struct s_input {
+	std::string date;
+	long long	val;
+} t_input;
 
 // -----------Colours-----------
 

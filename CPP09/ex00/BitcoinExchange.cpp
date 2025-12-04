@@ -38,44 +38,6 @@ BitcoinExchange& BitcoinExchange::operator = (const BitcoinExchange &other) {
 	return *this;
 }
 
-void parseInput (std::ifstream &file) {
-	std::string line;
-	std::getline(file, line);
-	if (line.compare("date | value") != 0) {
-		std::cout << "Error: bad input" << std::endl;
-	}
-	while (std::getline(file, line)) {
-		size_t pos = line.find('|');
-		if (pos != std::string::npos) {
-			int			val = std::atoi(line.substr(pos + 2).c_str());
-			if (val < 0)
-				std::cout << "Error: not a positive number." << std::endl;
-			else if (val > 1000)
-				std::cout << "Error: too large a number." << std::endl;
-			//check date format;
-		}
-		else {
-			std::string	date = line.substr(0);
-			std::cout << "Error: bad input => " << date << std::endl;
-		}
-	}
-}
-
-// calculate () {
-	
-// }
-
-void btc(std::ifstream &file) {
-	std::ifstream data("data.csv");
-	if (!data.is_open()) {
-		std::cout << "Error: could not open data.csv." << std::endl;
-		return ;
-	}
-	BitcoinExchange bitcoin(data);
-	data.close();
-	parseInput(file);
-
-	std::cout << "done\n";
-	//calculate();
-	//print();
+std::map<std::string, float> BitcoinExchange::getData() const {
+	return this->_data;
 }
