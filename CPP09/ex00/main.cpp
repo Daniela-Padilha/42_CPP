@@ -39,7 +39,7 @@ bool parseVal(t_input *input, std::string line, size_t pos) {
 	while (!valStr.empty() && std::isspace(valStr[valStr.size() - 1]))
 		valStr.erase(valStr.size() - 1, 1);
 
-	long long	val = std::atoll(valStr.c_str());
+	double	val = std::strtod(valStr.c_str(), NULL);
 	if (val < 0) {
 		std::cout << "Error: not a positive number." << std::endl;
 		return false;
@@ -53,16 +53,20 @@ bool parseVal(t_input *input, std::string line, size_t pos) {
 }
 
 void calculate(BitcoinExchange &bitcoin, t_input *input) {
-	std::map<std::string, float> database = bitcoin.getData();
-	database::iterator it = database.lower_bound(input->date);
+	std::map<std::string, double> database = bitcoin.getData();
+	std::map<std::string, double>::iterator it = database.lower_bound(input->date);
+	
+	//input too early
 	if (it == database.begin() && it->first != input->date) {
-		std::cout << "2009-01-02 => " << input->val << " = " << input->val * 0 << std::endl;
+		std::cout << input->date << " => " << input->val
+					<< " = " << std::setprecision(2) << (input->val * 0) << std::endl;
+		return ;
 	}
-	else {
-		if (it == database.end() || it->first != input->date)
-			--it;
-	}
-	std::cout << "calculating...\n";
+	//other cases
+	else if (it == database.end() || it->first != input->date)
+		--it;
+	std::cout << input->date << " => " << input->val
+				<< " = " << std::setprecision(2) << (input->val * it->second) << std::endl;
 }
 
 void parseInput(BitcoinExchange &bitcoin, std::ifstream &file) {

@@ -21,7 +21,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &dataFile) {
 		size_t position = line.find(',');
 		if (position != std::string::npos) {
 			std::string date = line.substr(0, position);
-			int			val = std::atoi(line.substr(position + 1).c_str());
+			double			val = std::strtod(line.substr(position + 1).c_str(), NULL);
 			this->_data.insert(std::make_pair(date, val));
 		}
 	}
@@ -38,6 +38,6 @@ BitcoinExchange& BitcoinExchange::operator = (const BitcoinExchange &other) {
 	return *this;
 }
 
-std::map<std::string, float> BitcoinExchange::getData() const {
+std::map<std::string, double> BitcoinExchange::getData() const {
 	return this->_data;
 }

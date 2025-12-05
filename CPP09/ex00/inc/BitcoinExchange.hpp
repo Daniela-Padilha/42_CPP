@@ -18,10 +18,11 @@
 # include <algorithm>
 # include <string>
 # include <map>
+# include <iomanip>
 
 class BitcoinExchange {
 	private:
-		std::map<std::string, float> _data;
+		std::map<std::string, double> _data;
 	public:
 		BitcoinExchange();
 		BitcoinExchange(std::ifstream &dataFile);
@@ -29,12 +30,12 @@ class BitcoinExchange {
 		~BitcoinExchange();
 		BitcoinExchange& operator = (const BitcoinExchange &other);
 
-		std::map<std::string, float> getData() const;
+		std::map<std::string, double> getData() const;
 };
 
 typedef struct s_input {
 	std::string date;
-	long long	val;
+	double	val;
 } t_input;
 
 // -----------Colours-----------
