@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:35:12 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/11/29 17:22:13 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/12/20 19:25:31 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &dataFile) {
 		size_t position = line.find(',');
 		if (position != std::string::npos) {
 			std::string date = line.substr(0, position);
-			double			val = std::strtod(line.substr(position + 1).c_str(), NULL);
+			double		val = std::strtod(line.substr(position + 1).c_str(), NULL);
 			this->_data.insert(std::make_pair(date, val));
 		}
 	}
