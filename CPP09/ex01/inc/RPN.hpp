@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 19:33:27 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/12/20 19:26:09 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2025/12/21 00:24:34 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 # define RPN_HPP
 
 # include <iostream>
+# include <string>
 # include <stack>
 # include <exception>
-# include <string>
+# include <sstream>
+# include <cctype>
 
 class RPN {
     private:
-        std::stack<string> _data;
+        std::stack<int> _nbrs;
     public:
         RPN();
-        RPN(_data);
         RPN(const RPN &other);
         ~RPN();
         RPN& operator=(const RPN &other);
-    
-    class Error: public std::exception {
-        public:
-            virtual const char* what() const throw();
+
+        void parse(const std::string& s);
+        bool isNumber(const std::string& s);
+        bool isSign(const std::string& s);
+        void solve(char sign);
+        
+        class Error: public std::exception {
+            public:
+                virtual const char* what() const throw();
     };
 };
 
