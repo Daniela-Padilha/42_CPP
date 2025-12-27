@@ -6,14 +6,17 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 19:33:31 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/12/21 00:36:55                                             */
+/*  Updated:    2025/12/21 23:22:03                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/RPN.hpp"
 
+//stack -> to use the last 2 nbrs we saw
+
 int main(int ac, char **av) {
     RPN rpn;
+    
     if (ac != 2) {
         std::cerr << "Please insert the expected argument." << std::endl;
         return 1;
