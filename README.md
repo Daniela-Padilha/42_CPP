@@ -91,12 +91,12 @@ This repository contains my solutions to the 42 C++ modules (00 to 09). Each fil
 
 ---
 
-## 📈 Module 09 — MutantStack & Inheritance from STL
+## 📈 Module 09 — Advanced Containers & STL
 | File                | Concept                                   |
 |---------------------|-------------------------------------------|
-| ex00                | Inheriting from standard containers       |
-| ex01                | Iterators with custom stack class         |
-| ex02                |
+| ex00                | std::map                                  |
+| ex01                | std::stack                                |
+| ex02                | Ford-Johnson algorithm, std::deque        |
 
 ---
 
