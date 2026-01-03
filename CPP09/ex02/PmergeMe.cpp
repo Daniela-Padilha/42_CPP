@@ -145,6 +145,48 @@ void PmergeMe::sortPairs() {
 	}
 }
 
+size_t jacobsthal(size_t n) {
+    if (n == 0)
+		return 0;
+    if (n == 1)
+		return 1;
+
+    size_t a = 0;
+    size_t b = 1;
+    size_t c;
+
+    for (size_t i = 2; i <= n; i++) {
+        c = b + 2 * a;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+std::vector<size_t> PmergeMe::buildJacobsthalOrder(size_t pairCount) {
+    std::vector<size_t> order;
+
+    if (pairCount == 0)
+        return order;
+
+    order.push_back(0);
+    size_t j = 1;
+    while (true) {
+        size_t curr = jacobsthal(j);
+        size_t prev = jacobsthal(j - 1);
+
+        if (prev >= pairCount)
+            break;
+        size_t upper = std::min(curr, pairCount);
+        for (size_t i = upper; i > prev; i--) {
+            if (i < pairCount)
+                order.push_back(i);
+        }
+        j++;
+    }
+    return order;
+}
+
 // ============== Vect version ==============
 
 void PmergeMe::makePairsVect() {
@@ -169,11 +211,30 @@ void PmergeMe::insertBigsVect() {
 	}
 }
 
+size_t	findBigPosVect(int big) {
+	size_t start = 0;
+	size_t end = _vect.size();
+
+	while (start < end) {
+		size_t middle = start + (end - start) / 2;
+		if (_vect[middle] < big)
+			start = middle + 1;
+		else
+			end = middle;
+	}
+	return start;
+}
+
 void PmergeMe::insertSmallsVect() {
-	for (size_t i = 0; i < _pairs.size(); i++) {
-		int 	small = _pairs[i].first;
+	std::vector<size_t> order = jacobsthalOrder(_pairs.size());
+
+	for (size_t i = 0; i < order.size(); i++) {
+		size_t pos = order[i];
+		int 	small = _pairs[k].first;
+		int		big = _pairs[k].second;
 		size_t	start = 0;
-		size_t	end = _vect.size();
+		size_t	end = findBigPos(big);
+	
 		while (start < end) {
 			size_t middle = start + (end - start) / 2;
 			if (small < _vect[middle])
@@ -182,7 +243,6 @@ void PmergeMe::insertSmallsVect() {
 				start = middle + 1;
 		}
 		_vect.insert(_vect.begin() + start, small);
-
 	}
 }
 
@@ -238,7 +298,6 @@ void PmergeMe::insertSmallsDeq() {
 				start = middle + 1;
 		}
 		_deq.insert(_deq.begin() + start, small);
-
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:38:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/12/27 19:44:18 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2026/01/03 19:02:42 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,25 @@ class PmergeMe {
 		bool							_hasLeftover;
 
 		//Algorithm Vect
-		void makePairsVect();
-		void insertBigsVect();
-		void insertSmallsVect();
-		void insertLeftoverVect();
+		void 	makePairsVect();
+		void 	insertBigsVect();
+		size_t	findBigPosVect(int big);
+		void 	insertSmallsVect();
+		void 	insertLeftoverVect();
 
 		//Algorithm Deq
-		void makePairsDeq();
-		void insertBigsDeq();
-		void insertSmallsDeq();
-		void insertLeftoverDeq();
+		void 	makePairsDeq();
+		void 	insertBigsDeq();
+		void 	insertSmallsDeq();
+		void 	insertLeftoverDeq();
 
 		// Helpers
-		void parse(char **av);
-		void useVect();
-		void useDeq();
-		void sortInsidePairs();
-		void sortPairs();
+		void 	parse(char **av);
+		void 	useVect();
+		void 	useDeq();
+		void 	sortInsidePairs();
+		void 	sortPairs();
+
 
 	public:
 		PmergeMe();

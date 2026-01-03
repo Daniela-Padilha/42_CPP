@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:46:44 by ddo-carm          #+#    #+#             */
-/*   Updated: 2025/11/28 18:10:28 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2026/01/03 18:22:44 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ bool parseDate(t_input *input, std::string line, size_t pos) {
 			std::cout << "Error: bad input => " << date << std::endl;
 			return false;
 			}
-		}
-		else {
-			std::cout << "Error: bad input => " << date << std::endl;
-			return false;
-		}
+	}
+	else {
+		std::cout << "Error: bad input => " << date << std::endl;
+		return false;
+	}
 	input->date = date;
 	return true;
 }
