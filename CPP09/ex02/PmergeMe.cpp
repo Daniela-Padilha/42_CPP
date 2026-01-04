@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:38:42 by ddo-carm          #+#    #+#             */
-/*  Updated:    2025/12/27 19:44:32                                             */
+/*  Updated:    2026/01/04 19:47:39                                             */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ void PmergeMe::sortPairs() {
 	}
 }
 
-size_t jacobsthal(size_t n) {
+size_t PmergeMe::jacobsthal(size_t n) {
     if (n == 0)
 		return 0;
     if (n == 1)
@@ -163,7 +163,7 @@ size_t jacobsthal(size_t n) {
     return b;
 }
 
-std::vector<size_t> PmergeMe::buildJacobsthalOrder(size_t pairCount) {
+std::vector<size_t> PmergeMe::jacobsthalOrder(size_t pairCount) {
     std::vector<size_t> order;
 
     if (pairCount == 0)
@@ -211,7 +211,7 @@ void PmergeMe::insertBigsVect() {
 	}
 }
 
-size_t	findBigPosVect(int big) {
+size_t	PmergeMe::findBigPosVect(int big) {
 	size_t start = 0;
 	size_t end = _vect.size();
 
@@ -229,11 +229,11 @@ void PmergeMe::insertSmallsVect() {
 	std::vector<size_t> order = jacobsthalOrder(_pairs.size());
 
 	for (size_t i = 0; i < order.size(); i++) {
-		size_t pos = order[i];
-		int 	small = _pairs[k].first;
-		int		big = _pairs[k].second;
+		size_t	pos = order[i];
+		int 	small = _pairs[pos].first;
+		int		big = _pairs[pos].second;
 		size_t	start = 0;
-		size_t	end = findBigPos(big);
+		size_t	end = findBigPosVect(big);
 	
 		while (start < end) {
 			size_t middle = start + (end - start) / 2;
@@ -285,11 +285,30 @@ void PmergeMe::insertBigsDeq() {
 	}
 }
 
+size_t	PmergeMe::findBigPosDeq(int big) {
+	size_t start = 0;
+	size_t end = _deq.size();
+
+	while (start < end) {
+		size_t middle = start + (end - start) / 2;
+		if (_deq[middle] < big)
+			start = middle + 1;
+		else
+			end = middle;
+	}
+	return start;
+}
+
 void PmergeMe::insertSmallsDeq() {
-	for (size_t i = 0; i < _pairs.size(); i++) {
-		int 	small = _pairs[i].first;
+	std::vector<size_t> order = jacobsthalOrder(_pairs.size());
+
+	for (size_t i = 0; i < order.size(); i++) {
+		size_t	pos = order[i];
+		int 	small = _pairs[pos].first;
+		int		big = _pairs[pos].second;
 		size_t	start = 0;
-		size_t	end = _deq.size();
+		size_t	end = findBigPosVect(big);
+	
 		while (start < end) {
 			size_t middle = start + (end - start) / 2;
 			if (small < _deq[middle])

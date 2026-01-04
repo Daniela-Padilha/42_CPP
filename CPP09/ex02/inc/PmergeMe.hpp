@@ -6,7 +6,7 @@
 /*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:38:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2026/01/03 19:02:42 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2026/01/04 19:47:24 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,18 @@ class PmergeMe {
 		//Algorithm Deq
 		void 	makePairsDeq();
 		void 	insertBigsDeq();
+		size_t	findBigPosDeq(int big);
 		void 	insertSmallsDeq();
 		void 	insertLeftoverDeq();
 
 		// Helpers
-		void 	parse(char **av);
-		void 	useVect();
-		void 	useDeq();
-		void 	sortInsidePairs();
-		void 	sortPairs();
+		void 				parse(char **av);
+		void 				useVect();
+		void 				useDeq();
+		void 				sortInsidePairs();
+		void 				sortPairs();
+		size_t				jacobsthal(size_t n);
+		std::vector<size_t> jacobsthalOrder(size_t pairCount);
 
 
 	public:
