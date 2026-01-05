@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddo-carm <ddo-carm@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ddo-carm <ddo-carm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 00:38:41 by ddo-carm          #+#    #+#             */
-/*   Updated: 2026/01/04 19:47:24 by ddo-carm         ###   ########.fr       */
+/*   Updated: 2026/01/05 15:49:06 by ddo-carm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,28 @@ class PmergeMe {
 		bool							_hasLeftover;
 
 		//Algorithm Vect
-		void 	makePairsVect();
-		void 	insertBigsVect();
-		size_t	findBigPosVect(int big);
-		void 	insertSmallsVect();
-		void 	insertLeftoverVect();
+		void 				makePairsVect();
+		void 				insertBigsVect();
+		void 				insertSmallsVect();
+		std::vector<size_t> jacobsthalOrderVect(size_t pairCount);
+		size_t				findBigPosVect(int big);
+		void 				insertLeftoverVect();
 
 		//Algorithm Deq
-		void 	makePairsDeq();
-		void 	insertBigsDeq();
-		size_t	findBigPosDeq(int big);
-		void 	insertSmallsDeq();
-		void 	insertLeftoverDeq();
+		void 				makePairsDeq();
+		void 				insertBigsDeq();
+		void 				insertSmallsDeq();
+		std::deque<size_t>	jacobsthalOrderDeq(size_t pairCount);
+		size_t				findBigPosDeq(int big);
+		void 				insertLeftoverDeq();
 
 		// Helpers
-		void 				parse(char **av);
-		void 				useVect();
-		void 				useDeq();
-		void 				sortInsidePairs();
-		void 				sortPairs();
-		size_t				jacobsthal(size_t n);
-		std::vector<size_t> jacobsthalOrder(size_t pairCount);
+		void 	parse(char **av);
+		void 	useVect();
+		void 	useDeq();
+		void 	sortInsidePairs();
+		void 	sortPairs();
+		size_t	jacobsthal(size_t n);
 
 
 	public:

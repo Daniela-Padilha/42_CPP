@@ -163,30 +163,6 @@ size_t PmergeMe::jacobsthal(size_t n) {
     return b;
 }
 
-std::vector<size_t> PmergeMe::jacobsthalOrder(size_t pairCount) {
-    std::vector<size_t> order;
-
-    if (pairCount == 0)
-        return order;
-
-    order.push_back(0);
-    size_t j = 1;
-    while (true) {
-        size_t curr = jacobsthal(j);
-        size_t prev = jacobsthal(j - 1);
-
-        if (prev >= pairCount)
-            break;
-        size_t upper = std::min(curr, pairCount);
-        for (size_t i = upper; i > prev; i--) {
-            if (i < pairCount)
-                order.push_back(i);
-        }
-        j++;
-    }
-    return order;
-}
-
 // ============== Vect version ==============
 
 void PmergeMe::makePairsVect() {
@@ -211,22 +187,8 @@ void PmergeMe::insertBigsVect() {
 	}
 }
 
-size_t	PmergeMe::findBigPosVect(int big) {
-	size_t start = 0;
-	size_t end = _vect.size();
-
-	while (start < end) {
-		size_t middle = start + (end - start) / 2;
-		if (_vect[middle] < big)
-			start = middle + 1;
-		else
-			end = middle;
-	}
-	return start;
-}
-
 void PmergeMe::insertSmallsVect() {
-	std::vector<size_t> order = jacobsthalOrder(_pairs.size());
+	std::vector<size_t> order = jacobsthalOrderVect(_pairs.size());
 
 	for (size_t i = 0; i < order.size(); i++) {
 		size_t	pos = order[i];
@@ -244,6 +206,44 @@ void PmergeMe::insertSmallsVect() {
 		}
 		_vect.insert(_vect.begin() + start, small);
 	}
+}
+
+std::vector<size_t> PmergeMe::jacobsthalOrderVect(size_t pairCount) {
+    std::vector<size_t> order;
+
+    if (pairCount == 0)
+        return order;
+
+    order.push_back(0);
+    size_t j = 1;
+    while (true) {
+        size_t curr = jacobsthal(j);
+        size_t prev = jacobsthal(j - 1);
+
+        if (prev >= pairCount)
+            break;
+        size_t upper = std::min(curr, pairCount);
+        for (size_t i = upper; i > prev; i--) {
+            if (i < pairCount)
+                order.push_back(i);
+        }
+        j++;
+    }
+    return order;
+}
+
+size_t	PmergeMe::findBigPosVect(int big) {
+	size_t start = 0;
+	size_t end = _vect.size();
+
+	while (start < end) {
+		size_t middle = start + (end - start) / 2;
+		if (_vect[middle] < big)
+			start = middle + 1;
+		else
+			end = middle;
+	}
+	return start;
 }
 
 void PmergeMe::insertLeftoverVect() {
@@ -285,22 +285,8 @@ void PmergeMe::insertBigsDeq() {
 	}
 }
 
-size_t	PmergeMe::findBigPosDeq(int big) {
-	size_t start = 0;
-	size_t end = _deq.size();
-
-	while (start < end) {
-		size_t middle = start + (end - start) / 2;
-		if (_deq[middle] < big)
-			start = middle + 1;
-		else
-			end = middle;
-	}
-	return start;
-}
-
 void PmergeMe::insertSmallsDeq() {
-	std::vector<size_t> order = jacobsthalOrder(_pairs.size());
+	std::deque<size_t> order = jacobsthalOrderDeq(_pairs.size());
 
 	for (size_t i = 0; i < order.size(); i++) {
 		size_t	pos = order[i];
@@ -318,6 +304,44 @@ void PmergeMe::insertSmallsDeq() {
 		}
 		_deq.insert(_deq.begin() + start, small);
 	}
+}
+
+std::deque<size_t> PmergeMe::jacobsthalOrderDeq(size_t pairCount) {
+    std::deque<size_t> order;
+
+    if (pairCount == 0)
+        return order;
+
+    order.push_back(0);
+    size_t j = 1;
+    while (true) {
+        size_t curr = jacobsthal(j);
+        size_t prev = jacobsthal(j - 1);
+
+        if (prev >= pairCount)
+            break;
+        size_t upper = std::min(curr, pairCount);
+        for (size_t i = upper; i > prev; i--) {
+            if (i < pairCount)
+                order.push_back(i);
+        }
+        j++;
+    }
+    return order;
+}
+
+size_t	PmergeMe::findBigPosDeq(int big) {
+	size_t start = 0;
+	size_t end = _deq.size();
+
+	while (start < end) {
+		size_t middle = start + (end - start) / 2;
+		if (_deq[middle] < big)
+			start = middle + 1;
+		else
+			end = middle;
+	}
+	return start;
 }
 
 void PmergeMe::insertLeftoverDeq() {
