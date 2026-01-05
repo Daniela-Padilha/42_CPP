@@ -293,7 +293,7 @@ void PmergeMe::insertSmallsDeq() {
 		int 	small = _pairs[pos].first;
 		int		big = _pairs[pos].second;
 		size_t	start = 0;
-		size_t	end = findBigPosVect(big);
+		size_t	end = findBigPosDeq(big);
 	
 		while (start < end) {
 			size_t middle = start + (end - start) / 2;
